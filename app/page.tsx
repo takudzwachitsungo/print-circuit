@@ -1,18 +1,9 @@
-import Reveal from "@/components/animation/Reveal";
+import Hero from "@/components/home/Hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-base px-6 text-center">
-      <h1 className="font-display text-5xl font-bold text-primary sm:text-7xl">
-        Print Circuit
-      </h1>
-      <Reveal>
-        <p className="font-body text-muted" data-testid="reveal-probe">
-          <span className="text-cyan">Bringing</span>{" "}
-          <span className="text-magenta">ideas</span>{" "}
-          <span className="text-yellow">to print.</span>
-        </p>
-      </Reveal>
-    </main>
+    <>
+      <Hero />
+    </>
   );
 }
