@@ -5,6 +5,7 @@ import ServiceHero from "@/components/services/ServiceHero";
 import ServiceIncluded from "@/components/services/ServiceIncluded";
 import ServiceGallery from "@/components/services/ServiceGallery";
 import ServiceFaq from "@/components/services/ServiceFaq";
+import StickyQuoteCta from "@/components/services/StickyQuoteCta";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -42,6 +43,7 @@ export default async function ServiceDetailPage({
       <ServiceIncluded service={service} />
       <ServiceGallery service={service} />
       <ServiceFaq service={service} />
+      <StickyQuoteCta service={service} />
     </main>
   );
 }
