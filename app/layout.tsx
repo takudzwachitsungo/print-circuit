@@ -7,9 +7,13 @@ import PageTransition from "@/components/providers/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Print Circuit | Printing & Branding in Zimbabwe",
+  title: {
+    default: "Print Circuit | Printing & Branding in Zimbabwe",
+    template: "%s | Print Circuit",
+  },
   description:
     "Print Circuit is a Harare-based printing, branding, signage and design company serving businesses across Zimbabwe.",
+  openGraph: { title: "Print Circuit", type: "website", locale: "en_ZW" },
 };
 
 export default function RootLayout({
