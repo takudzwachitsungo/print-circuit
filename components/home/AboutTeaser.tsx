@@ -3,7 +3,7 @@ import Reveal from "@/components/animation/Reveal";
 import Counter from "@/components/animation/Counter";
 
 const STATS = [
-  { to: 4, suffix: "+", label: "Projects delivered" },
+  { to: 4, suffix: "+", label: "Projects completed" },
   { to: 20, suffix: "+", label: "Clients served" },
   { to: 5, suffix: "", label: "Service lines" },
 ];

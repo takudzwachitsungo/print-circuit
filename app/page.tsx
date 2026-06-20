@@ -3,6 +3,9 @@ import Marquee from "@/components/home/Marquee";
 import AboutTeaser from "@/components/home/AboutTeaser";
 import ServicesGrid from "@/components/home/ServicesGrid";
 import FeaturedWork from "@/components/home/FeaturedWork";
+import Process from "@/components/home/Process";
+import Testimonials from "@/components/home/Testimonials";
+import CtaBand from "@/components/home/CtaBand";
 
 export default function Home() {
   return (
@@ -12,6 +15,9 @@ export default function Home() {
       <AboutTeaser />
       <ServicesGrid />
       <FeaturedWork />
+      <Process />
+      <Testimonials />
+      <CtaBand />
     </>
   );
 }
