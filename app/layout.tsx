@@ -3,6 +3,7 @@ import { display, body } from "./fonts";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import PageTransition from "@/components/providers/PageTransition";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -24,7 +25,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-base text-primary font-body antialiased">
         <SmoothScroll>
           <Navbar />
-          {children}
+          <PageTransition>{children}</PageTransition>
           <Footer />
         </SmoothScroll>
       </body>
