@@ -25,6 +25,16 @@
   --accent-yellow: #fff200;
 }
 
+/* Infinite marquee (track is duplicated; -50% = one full set) */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
 /* Accessibility: honour reduced-motion everywhere */
 @media (prefers-reduced-motion: reduce) {
   *,
