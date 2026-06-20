@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { SERVICES, ACCENT } from "@/lib/services";
 
 export default function ServicesList() {
+  const reduce = useReducedMotion();
+
   return (
     <ul className="mt-16 border-t border-white/10">
       {SERVICES.map((s, i) => {
@@ -12,10 +14,10 @@ export default function ServicesList() {
         return (
           <motion.li
             key={s.slug}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
-            transition={{ duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
+            initial={reduce ? false : { opacity: 0, y: 24 }}
+            whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
+            viewport={reduce ? undefined : { once: true, margin: "-10% 0px" }}
+            transition={reduce ? undefined : { duration: 0.5, delay: i * 0.05, ease: "easeOut" }}
             className="border-b border-white/10"
           >
             <Link
