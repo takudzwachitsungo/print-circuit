@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { display, body } from "./fonts";
+import SmoothScroll from "@/components/providers/SmoothScroll";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-base text-primary font-body antialiased">
-        {children}
+        <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
   );
