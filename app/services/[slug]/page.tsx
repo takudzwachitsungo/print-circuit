@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { SERVICES, getService } from "@/lib/services";
 import ServiceHero from "@/components/services/ServiceHero";
+import ServiceIncluded from "@/components/services/ServiceIncluded";
+import ServiceGallery from "@/components/services/ServiceGallery";
 
 export function generateStaticParams() {
   return SERVICES.map((s) => ({ slug: s.slug }));
@@ -36,6 +38,8 @@ export default async function ServiceDetailPage({
   return (
     <main>
       <ServiceHero service={service} />
+      <ServiceIncluded service={service} />
+      <ServiceGallery service={service} />
     </main>
   );
 }
