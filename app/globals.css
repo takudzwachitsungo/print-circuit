@@ -1,26 +1,38 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ── Premium Ink design tokens (Tailwind v4 @theme) ───────────────────
+   Generates utilities: bg-base, bg-surface, text-primary, text-muted,
+   text-cyan/magenta/yellow (and bg-* variants), font-display, font-body. */
+@theme {
+  --color-base: #0a0a0c;
+  --color-surface: #141417;
+  --color-primary: #f5f5f2;
+  --color-muted: #9a9aa0;
+  --color-cyan: #00aeef;
+  --color-magenta: #ec008c;
+  --color-yellow: #fff200;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Raw CSS variables for gradients / animation values */
+:root {
+  --accent-cyan: #00aeef;
+  --accent-magenta: #ec008c;
+  --accent-yellow: #fff200;
+}
+
+/* Accessibility: honour reduced-motion everywhere */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
