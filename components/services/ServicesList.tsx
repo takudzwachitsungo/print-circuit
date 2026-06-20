@@ -25,7 +25,7 @@ export default function ServicesList() {
               className="group flex items-center justify-between gap-6 py-8"
             >
               <div className="min-w-0">
-                <h2 className="font-display text-2xl font-bold text-primary transition-colors group-hover:text-cyan sm:text-4xl">
+                <h2 className={`font-display text-2xl font-bold text-primary transition-colors ${accent.groupHoverText} sm:text-4xl`}>
                   {s.label}
                 </h2>
                 <p className="mt-2 max-h-0 overflow-hidden text-muted opacity-0 transition-all duration-300 group-hover:max-h-20 group-hover:opacity-100">

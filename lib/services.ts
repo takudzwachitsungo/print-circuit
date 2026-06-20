@@ -204,10 +204,11 @@ const CONTENT: Record<string, ServiceContent> = {
   },
 };
 
-export const SERVICES: Service[] = SITE.services.map((s) => ({
-  ...s,
-  ...CONTENT[s.slug],
-}));
+export const SERVICES: Service[] = SITE.services.map((s) => {
+  const content = CONTENT[s.slug];
+  if (!content) throw new Error(`No service content defined for slug: ${s.slug}`);
+  return { ...s, ...content };
+});
 
 export function getService(slug: string): Service | undefined {
   return SERVICES.find((s) => s.slug === slug);

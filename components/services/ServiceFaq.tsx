@@ -18,7 +18,9 @@ export default function ServiceFaq({ service }: { service: Service }) {
             <div key={faq.q}>
               <button
                 type="button"
+                id={`faq-trigger-${i}`}
                 aria-expanded={isOpen}
+                aria-controls={`faq-panel-${i}`}
                 onClick={() => setOpen(isOpen ? null : i)}
                 className="flex w-full items-center justify-between gap-6 py-5 text-left"
               >
@@ -39,6 +41,9 @@ export default function ServiceFaq({ service }: { service: Service }) {
                   toBeVisible() correctly reports false (bounding-box alone is not enough
                   because overflow-hidden doesn't affect getBoundingClientRect). */}
               <div
+                id={`faq-panel-${i}`}
+                role="region"
+                aria-labelledby={`faq-trigger-${i}`}
                 className={`grid transition-all duration-300 ${
                   isOpen ? "grid-rows-[1fr] pb-5" : "grid-rows-[0fr]"
                 }`}
