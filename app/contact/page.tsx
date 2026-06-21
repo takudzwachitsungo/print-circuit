@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get a quote from Print Circuit — Harare printing, branding, signage and web. Call, WhatsApp, or send us your project details.",
+  alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact" },
 };
 
 export default function ContactPage() {

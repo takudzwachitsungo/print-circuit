@@ -1,5 +1,6 @@
 export const SITE = {
   name: "Print Circuit",
+  url: "https://www.printcircuit.co.zw",
   legalName: "Printcircuit Enterprises (Private) Limited",
   address: "61 Mendel, Avondale, Harare, Zimbabwe",
   phones: ["+263 78 872 3331", "+263 71 776 1048"],

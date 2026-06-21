@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Services",
   description:
     "Printing, graphic design & branding, signage, stationery and web development — everything Print Circuit offers, in one place.",
+  alternates: { canonical: "/services" },
+  openGraph: { url: "/services" },
 };
 
 export default function ServicesPage() {

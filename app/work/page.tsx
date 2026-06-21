@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "Work",
   description:
     "Selected printing, branding, signage and web projects by Print Circuit in Harare, Zimbabwe.",
+  alternates: { canonical: "/work" },
+  openGraph: { url: "/work" },
 };
 
 export default function WorkPage() {
