@@ -12,10 +12,12 @@ async function deliverQuote(data: QuoteRequest): Promise<void> {
     return;
   }
 
+  // `|| 587` (not `?? 587`) so a blank SMTP_PORT="" falls back to 587, not 0.
+  const port = Number(SMTP_PORT) || 587;
   const transport = nodemailer.createTransport({
     host: SMTP_HOST,
-    port: Number(SMTP_PORT ?? 587),
-    secure: Number(SMTP_PORT ?? 587) === 465,
+    port,
+    secure: port === 465,
     auth: { user: SMTP_USER, pass: SMTP_PASS },
   });
 
