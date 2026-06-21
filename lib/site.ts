@@ -6,6 +6,11 @@ export const SITE = {
   email: "info@printcircuit.co.zw",
   whatsapp: "https://wa.me/263788723331",
   socials: { twitter: "https://twitter.com/printcircuit" },
+  hours: [
+    { days: "Monday – Friday", time: "8:00 – 17:00" },
+    { days: "Saturday", time: "9:00 – 13:00" },
+    { days: "Sunday", time: "Closed" },
+  ],
   services: [
     { slug: "printing", label: "Printing Services" },
     { slug: "graphic-design-branding", label: "Graphic Design & Branding" },

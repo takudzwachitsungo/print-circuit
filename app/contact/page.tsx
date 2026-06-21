@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import QuoteForm from "@/components/contact/QuoteForm";
+import ContactInfo from "@/components/contact/ContactInfo";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -20,8 +21,9 @@ export default function ContactPage() {
         Tell us about your project and we&rsquo;ll get you a quote — usually the
         same day.
       </p>
-      <div className="mt-12 max-w-2xl">
+      <div className="mt-12 grid gap-12 lg:grid-cols-2">
         <QuoteForm />
+        <ContactInfo />
       </div>
     </main>
   );
