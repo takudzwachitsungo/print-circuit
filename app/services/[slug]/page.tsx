@@ -24,7 +24,12 @@ export async function generateMetadata({
   return {
     title: service.seoTitle,
     description: service.seoDescription,
-    openGraph: { title: service.seoTitle, description: service.seoDescription },
+    alternates: { canonical: `/services/${slug}` },
+    openGraph: {
+      title: service.seoTitle,
+      description: service.seoDescription,
+      url: `/services/${slug}`,
+    },
   };
 }
 

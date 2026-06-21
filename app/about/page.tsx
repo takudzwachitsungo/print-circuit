@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Print Circuit is a Harare-based printing, branding and design studio. Learn our story and what we stand for.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about" },
 };
 
 export default function AboutPage() {

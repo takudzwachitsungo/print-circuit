@@ -1,9 +1,40 @@
+import nodemailer from "nodemailer";
 import { validateQuote, type QuoteRequest, type QuoteResponse } from "@/lib/quote";
 
-// Backend-ready seam: today we log the validated quote server-side so nothing is
-// lost; wire this to email / DB / CRM when provider credentials are available.
+// Backend-ready seam. Sends the validated quote by SMTP when the mail env vars
+// are configured; otherwise logs server-side so nothing is lost (dev/CI default).
 async function deliverQuote(data: QuoteRequest): Promise<void> {
-  console.info("[quote] new submission", data);
+  const { SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, QUOTE_TO, QUOTE_FROM } =
+    process.env;
+
+  if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS || !QUOTE_TO) {
+    console.info("[quote] new submission (mail not configured)", data);
+    return;
+  }
+
+  // `|| 587` (not `?? 587`) so a blank SMTP_PORT="" falls back to 587, not 0.
+  const port = Number(SMTP_PORT) || 587;
+  const transport = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port,
+    secure: port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+
+  await transport.sendMail({
+    from: QUOTE_FROM ?? SMTP_USER,
+    to: QUOTE_TO,
+    replyTo: data.email,
+    subject: `Quote request: ${data.service} — ${data.name}`,
+    text: [
+      `Service: ${data.service}`,
+      `Name: ${data.name}`,
+      `Email: ${data.email}`,
+      `Phone: ${data.phone}`,
+      "",
+      data.details,
+    ].join("\n"),
+  });
 }
 
 export async function POST(request: Request): Promise<Response> {

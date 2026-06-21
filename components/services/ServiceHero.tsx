@@ -16,7 +16,7 @@ export default function ServiceHero({ service }: { service: Service }) {
           Service
         </p>
         <h1 className="mt-4 max-w-4xl font-display text-4xl font-bold text-primary sm:text-6xl">
-          {service.label}
+          {service.seoTitle}
         </h1>
         <p className="mt-4 max-w-3xl font-display text-xl text-muted sm:text-2xl">
           {service.tagline}
