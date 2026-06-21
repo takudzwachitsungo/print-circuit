@@ -42,7 +42,7 @@ export default function Testimonials() {
   return (
     <section
       aria-label="What our clients say"
-      className="mx-auto max-w-4xl px-6 py-24 text-center"
+      className="mx-auto max-w-4xl px-6 py-16 text-center"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >

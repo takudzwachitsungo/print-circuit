@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import MagneticButton from "@/components/ui/MagneticButton";
 
@@ -29,7 +30,13 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-display text-lg font-bold text-primary">
+        <Link
+          href="/"
+          className="flex items-center gap-2 font-display text-lg font-bold text-primary"
+        >
+          {/* Decorative — the wordmark beside it carries the name. Low-res
+              48px stopgap from the old site; swap for a crisp file later. */}
+          <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" />
           Print Circuit
         </Link>
 

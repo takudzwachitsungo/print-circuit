@@ -5,7 +5,7 @@ import { COMPANY_STATS } from "@/lib/stats";
 
 export default function AboutTeaser() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-24">
+    <section className="mx-auto max-w-7xl px-6 py-16">
       <Reveal className="max-w-3xl">
         <p className="font-display text-sm uppercase tracking-[0.2em] text-cyan">
           About

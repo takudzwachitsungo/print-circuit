@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { SITE } from "@/lib/site";
 
 export default function Footer() {
@@ -9,8 +10,9 @@ export default function Footer() {
         <div className="md:col-span-2">
           <Link
             href="/"
-            className="font-display text-xl font-bold text-primary"
+            className="flex items-center gap-2 font-display text-xl font-bold text-primary"
           >
+            <Image src="/logo.png" alt="" width={32} height={32} className="h-8 w-8" />
             Print Circuit
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted">
