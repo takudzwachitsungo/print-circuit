@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { display, body } from "./fonts";
 import { SITE } from "@/lib/site";
+import JsonLd from "@/components/seo/JsonLd";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
@@ -41,6 +42,7 @@ export default function RootLayout({
       className={`${display.variable} ${body.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-base text-primary font-body antialiased">
+        <JsonLd />
         <SmoothScroll>
           <Navbar />
           <PageTransition>{children}</PageTransition>
