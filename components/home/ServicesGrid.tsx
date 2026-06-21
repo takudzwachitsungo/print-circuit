@@ -20,7 +20,7 @@ export default function ServicesGrid() {
   return (
     <section
       aria-label="Our services"
-      className="mx-auto max-w-7xl px-6 py-24"
+      className="mx-auto max-w-7xl px-6 py-16"
     >
       <Reveal>
         <p className="font-display text-sm uppercase tracking-[0.2em] text-magenta">

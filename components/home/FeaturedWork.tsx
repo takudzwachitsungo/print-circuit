@@ -6,7 +6,7 @@ export default function FeaturedWork() {
   const featured = PROJECTS.slice(0, 4);
 
   return (
-    <section aria-label="Featured work" className="mx-auto max-w-7xl px-6 py-24">
+    <section aria-label="Featured work" className="mx-auto max-w-7xl px-6 py-16">
       <Reveal className="flex items-end justify-between gap-6">
         <div>
           <p className="font-display text-sm uppercase tracking-[0.2em] text-yellow">
