@@ -1,12 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/animation/Reveal";
 import Counter from "@/components/animation/Counter";
-
-const STATS = [
-  { to: 4, suffix: "+", label: "Projects completed" },
-  { to: 20, suffix: "+", label: "Clients served" },
-  { to: 5, suffix: "", label: "Service lines" },
-];
+import { COMPANY_STATS } from "@/lib/stats";
 
 export default function AboutTeaser() {
   return (
@@ -33,7 +28,7 @@ export default function AboutTeaser() {
       </Reveal>
 
       <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-3">
-        {STATS.map((s) => (
+        {COMPANY_STATS.map((s) => (
           <div key={s.label}>
             <div className="font-display text-4xl font-bold text-primary sm:text-6xl">
               <Counter to={s.to} suffix={s.suffix} />

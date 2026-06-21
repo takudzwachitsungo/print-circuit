@@ -3,6 +3,8 @@ import AboutHero from "@/components/about/AboutHero";
 import StorySection from "@/components/about/StorySection";
 import ValuesPanels from "@/components/about/ValuesPanels";
 import TeamGrid from "@/components/about/TeamGrid";
+import AboutStats from "@/components/about/AboutStats";
+import CtaBand from "@/components/home/CtaBand";
 
 export const metadata: Metadata = {
   title: "About",
@@ -17,6 +19,8 @@ export default function AboutPage() {
       <StorySection />
       <ValuesPanels />
       <TeamGrid />
+      <AboutStats />
+      <CtaBand />
     </main>
   );
 }
