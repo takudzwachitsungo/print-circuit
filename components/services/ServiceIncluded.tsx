@@ -12,16 +12,19 @@ export default function ServiceIncluded({ service }: { service: Service }) {
       </Reveal>
       <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {service.included.map((item, i) => (
-          <Reveal key={item} delay={i * 0.05}>
-            <li className="flex items-center gap-3 rounded-2xl border border-white/10 bg-surface px-5 py-4">
-              <span
-                aria-hidden
-                className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${accent.bgSoft} ${accent.text} font-display text-sm`}
-              >
-                +
-              </span>
-              <span className="text-primary">{item}</span>
-            </li>
+          <Reveal
+            as="li"
+            key={item}
+            delay={i * 0.05}
+            className="flex items-center gap-3 rounded-2xl border border-white/10 bg-surface px-5 py-4"
+          >
+            <span
+              aria-hidden
+              className={`grid h-8 w-8 shrink-0 place-items-center rounded-full ${accent.bgSoft} ${accent.text} font-display text-sm`}
+            >
+              +
+            </span>
+            <span className="text-primary">{item}</span>
           </Reveal>
         ))}
       </ul>

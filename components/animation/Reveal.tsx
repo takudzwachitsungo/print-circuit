@@ -1,18 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, type ElementType } from "react";
 import { gsap } from "@/lib/gsap";
 
 export default function Reveal({
   children,
   delay = 0,
   className,
+  as: Tag = "div",
 }: {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  as?: ElementType;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const el = ref.current;
@@ -34,8 +36,8 @@ export default function Reveal({
   }, [delay]);
 
   return (
-    <div ref={ref} className={className}>
+    <Tag ref={ref} className={className}>
       {children}
-    </div>
+    </Tag>
   );
 }
