@@ -6,8 +6,7 @@ export interface TeamMember {
 }
 
 /** Real team members only (no placeholder Tech001/002 names from the old site).
-    Bios are role-level and honest — adjust wording as the team confirms it.
-    TODO: add the Social Media Manager once their name is confirmed. */
+    Bios are role-level and honest — adjust wording as the team confirms it. */
 export const TEAM: TeamMember[] = [
   {
     name: "Tinotenda",
@@ -23,5 +22,10 @@ export const TEAM: TeamMember[] = [
     name: "Takudzwa Chitsungo",
     role: "Web Developer",
     bio: "Builds and maintains our website and the digital tools behind the studio.",
+  },
+  {
+    name: "Audrey Sithole",
+    role: "Social Media Manager",
+    bio: "Runs our social channels and keeps the Print Circuit brand active where customers are.",
   },
 ];
