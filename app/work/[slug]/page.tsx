@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { PROJECTS, getProject } from "@/lib/projects";
+import { getGalleryImages } from "@/lib/gallery";
 import CaseStudyHero from "@/components/work/CaseStudyHero";
 import CaseStudyGallery from "@/components/work/CaseStudyGallery";
 import MagneticButton from "@/components/ui/MagneticButton";
@@ -41,10 +42,12 @@ export default async function CaseStudyPage({
   const project = getProject(slug);
   if (!project) notFound();
 
+  const galleryImages = getGalleryImages(slug);
+
   return (
     <main>
       <CaseStudyHero project={project} />
-      <CaseStudyGallery project={project} />
+      <CaseStudyGallery project={project} images={galleryImages} />
 
       <section className="mx-auto max-w-5xl px-6 py-16 text-center">
         <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
