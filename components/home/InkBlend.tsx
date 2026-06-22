@@ -18,21 +18,21 @@ export default function InkBlend() {
       {BLOBS.map((b, i) => (
         <motion.div
           key={i}
-          className={`absolute h-[42vmax] w-[42vmax] rounded-full opacity-25 blur-[110px] ${b.pos}`}
+          className={`absolute h-[46vmax] w-[46vmax] rounded-full opacity-45 blur-[80px] ${b.pos}`}
           style={{ background: b.color }}
           animate={
             reduce
               ? undefined
               : {
-                  x: [0, 40, -30, 0],
-                  y: [0, -30, 40, 0],
-                  scale: [1, 1.15, 0.95, 1],
+                  x: [0, 110, -80, 0],
+                  y: [0, -90, 100, 0],
+                  scale: [1, 1.3, 0.85, 1],
                 }
           }
           transition={
             reduce
               ? undefined
-              : { duration: 18 + i * 4, repeat: Infinity, ease: "easeInOut" }
+              : { duration: 11 + i * 3, repeat: Infinity, ease: "easeInOut" }
           }
         />
       ))}
