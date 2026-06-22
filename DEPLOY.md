@@ -10,6 +10,40 @@ npm run build
 npm run start   # serves the production build
 ```
 
+## Deploy to Vercel (recommended)
+
+This is a standard Next.js app — Vercel auto-detects the framework, build
+command (`next build`) and output. No `vercel.json` is needed. Connect the
+GitHub repo once and every push to `master` deploys automatically (PRs get
+preview URLs).
+
+1. Go to <https://vercel.com/new> and sign in (use the **GitHub** account that
+   owns the repo).
+2. **Import** `takudzwachitsungo/print-circuit`. If prompted, install the
+   Vercel GitHub App and grant access to this repo.
+3. Framework preset: **Next.js** (auto-detected). Leave build & output settings
+   at their defaults.
+4. **Environment Variables** (all optional — the app builds and runs without
+   them; see the table below). Add the SMTP ones when you want the quote form
+   to email instead of log. Do **not** paste real secrets into the repo.
+5. Click **Deploy**. First build is the canonical one; subsequent pushes to
+   `master` redeploy.
+
+### Custom domain
+- In the Vercel project → **Settings → Domains**, add `www.printcircuit.co.zw`
+  (and `printcircuit.co.zw` redirecting to `www`).
+- Update DNS at your registrar as Vercel instructs (usually a `CNAME` for `www`
+  → `cname.vercel-dns.com`, and the apex per Vercel's guidance).
+- `SITE.url` is already `https://www.printcircuit.co.zw`, so canonical tags,
+  sitemap, robots and JSON-LD are correct once the domain is live. Until then
+  the site is reachable at the generated `*.vercel.app` URL (canonical/OG still
+  point at the real domain — expected).
+
+### CLI alternative
+`npm i -g vercel` → `vercel login` → `vercel link` → `vercel --prod`. The
+dashboard Git integration above is preferred because it gives push-to-deploy
+and preview builds.
+
 ## Environment variables
 
 Copy `.env.example` to `.env` (or set these in your host's dashboard). All are
