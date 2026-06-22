@@ -69,9 +69,9 @@ export default function Process() {
     <section
       ref={sectionRef}
       aria-label="How we work"
-      className="overflow-hidden bg-base py-24 md:h-screen md:py-0"
+      className="overflow-hidden bg-base py-20 md:min-h-[560px] md:py-0"
     >
-      <div className="mx-auto max-w-7xl px-6 md:flex md:h-screen md:flex-col md:justify-center">
+      <div className="mx-auto max-w-7xl px-6 md:flex md:min-h-[560px] md:flex-col md:justify-center">
         <p className="font-display text-sm uppercase tracking-[0.2em] text-magenta">
           How it works
         </p>
