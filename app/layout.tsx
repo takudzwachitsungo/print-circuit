@@ -5,6 +5,7 @@ import JsonLd from "@/components/seo/JsonLd";
 import SmoothScroll from "@/components/providers/SmoothScroll";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </SmoothScroll>
+        <Analytics />
       </body>
     </html>
   );
