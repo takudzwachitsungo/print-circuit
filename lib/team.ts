@@ -13,13 +13,13 @@ export interface TeamMember {
     Photos are from the old site (printcircuit.co.zw). */
 export const TEAM: TeamMember[] = [
   {
-    name: "Tinotenda",
+    name: "Moses Mukudu",
     role: "IT Technician",
     bio: "Keeps our machines, network and digital workflow running so jobs move smoothly from file to finished.",
-    photo: "tinotenda.jpg",
+    photo: "moses.jpg",
   },
   {
-    name: "Percival",
+    name: "Percival Kufamusarira",
     role: "Graphic Designer",
     bio: "Turns briefs into clean, on-brand artwork that works across print and screen.",
     photo: "percival.jpg",
