@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/animation/Reveal";
 import { TEAM } from "@/lib/team";
 
@@ -17,10 +18,22 @@ export default function TeamGrid() {
             delay={i * 0.05}
             className="h-full rounded-2xl border border-white/10 bg-surface p-6"
           >
-            <div
-              aria-hidden
-              className="aspect-square w-20 overflow-hidden rounded-full bg-gradient-to-br from-cyan/30 via-magenta/30 to-yellow/30"
-            />
+            {member.photo ? (
+              <div className="relative aspect-square w-20 overflow-hidden rounded-full border border-white/10">
+                <Image
+                  src={member.photo}
+                  alt={member.name}
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
+            ) : (
+              <div
+                aria-hidden
+                className="aspect-square w-20 overflow-hidden rounded-full bg-gradient-to-br from-cyan/30 via-magenta/30 to-yellow/30"
+              />
+            )}
             <h3 className="mt-5 font-display text-lg font-bold text-primary">
               {member.name}
             </h3>

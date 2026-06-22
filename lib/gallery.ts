@@ -20,3 +20,8 @@ export function getGalleryImages(slug: string): string[] {
     return [];
   }
 }
+
+/** Cover image for a project = the first image in its folder, or null. */
+export function getCover(slug: string): string | null {
+  return getGalleryImages(slug)[0] ?? null;
+}

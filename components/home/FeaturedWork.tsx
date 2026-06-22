@@ -1,9 +1,14 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/animation/Reveal";
 import { PROJECTS } from "@/lib/projects";
+import { getCover } from "@/lib/gallery";
 
 export default function FeaturedWork() {
-  const featured = PROJECTS.slice(0, 4);
+  const featured = PROJECTS.slice(0, 4).map((p) => ({
+    ...p,
+    cover: getCover(p.slug),
+  }));
 
   return (
     <section aria-label="Featured work" className="mx-auto max-w-7xl px-6 py-16">
@@ -32,7 +37,17 @@ export default function FeaturedWork() {
               className="group block overflow-hidden rounded-2xl border border-white/10"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-surface via-base to-surface transition-transform duration-500 group-hover:scale-105" />
+                {p.cover ? (
+                  <Image
+                    src={p.cover}
+                    alt={p.title}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="absolute inset-0 bg-gradient-to-br from-surface via-base to-surface transition-transform duration-500 group-hover:scale-105" />
+                )}
                 <span className="absolute left-4 top-4 rounded-full bg-base/70 px-3 py-1 text-xs text-muted backdrop-blur">
                   {p.category}
                 </span>

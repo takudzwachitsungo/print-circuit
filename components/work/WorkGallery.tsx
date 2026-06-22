@@ -7,7 +7,11 @@ import WorkCard from "./WorkCard";
 
 type Filter = "All" | ProjectCategory;
 
-export default function WorkGallery() {
+export default function WorkGallery({
+  covers = {},
+}: {
+  covers?: Record<string, string | null>;
+}) {
   const reduce = useReducedMotion();
   const [filter, setFilter] = useState<Filter>("All");
   const filters: Filter[] = ["All", ...CATEGORIES];
@@ -48,7 +52,7 @@ export default function WorkGallery() {
               exit={reduce ? { opacity: 0 } : { opacity: 0, scale: 0.96 }}
               transition={reduce ? { duration: 0 } : { duration: 0.3, ease: "easeOut" }}
             >
-              <WorkCard project={project} />
+              <WorkCard project={project} cover={covers[project.slug]} />
             </motion.li>
           ))}
         </AnimatePresence>
