@@ -4,7 +4,7 @@ export const SITE = {
   legalName: "Printcircuit Enterprises (Private) Limited",
   address: "61 Mendel, Avondale, Harare, Zimbabwe",
   phones: ["+263 78 872 3331", "+263 71 776 1048"],
-  email: "info@printcircuit.co.zw",
+  email: "printcircuitsales@gmail.com",
   whatsapp: "https://wa.me/263788723331",
   socials: { twitter: "https://twitter.com/printcircuit" },
   hours: [

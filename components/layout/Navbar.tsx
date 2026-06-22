@@ -36,7 +36,7 @@ export default function Navbar() {
         >
           {/* Decorative — the wordmark beside it carries the name. Low-res
               48px stopgap from the old site; swap for a crisp file later. */}
-          <Image src="/logo.png" alt="" width={28} height={28} className="h-7 w-7" />
+          <Image src="/logo.png" alt="" width={44} height={44} className="h-11 w-11" />
           Print Circuit
         </Link>
 
