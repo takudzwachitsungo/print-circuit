@@ -1,4 +1,4 @@
-import { readdirSync } from "node:fs";
+import { readdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
 const IMAGE_RE = /\.(jpe?g|png|webp|avif|gif)$/i;
@@ -24,4 +24,13 @@ export function getGalleryImages(slug: string): string[] {
 /** Cover image for a project = the first image in its folder, or null. */
 export function getCover(slug: string): string | null {
   return getGalleryImages(slug)[0] ?? null;
+}
+
+/** Team headshot under public/team/<file>, or null when the file isn't there
+    (so a member without a photo gets the gradient avatar — no broken image). */
+export function getTeamPhoto(file: string | undefined): string | null {
+  if (!file) return null;
+  return existsSync(join(process.cwd(), "public", "team", file))
+    ? `/team/${file}`
+    : null;
 }
