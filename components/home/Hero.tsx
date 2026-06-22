@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import InkBlend from "./InkBlend";
 import Reveal from "@/components/animation/Reveal";
+import TextType from "@/components/animation/TextType";
 import MagneticButton from "@/components/ui/MagneticButton";
 
-const HEADLINE = ["We", "bring", "ideas", "to", "print."];
+const HEADLINE = "We bring ideas to print.";
 
 export default function Hero() {
   const reduce = useReducedMotion();
@@ -16,17 +17,26 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-7xl px-6">
         <h1 className="font-display text-5xl font-bold leading-[1.05] text-primary sm:text-7xl lg:text-8xl">
-          {HEADLINE.map((word, i) => (
-            <motion.span
-              key={i}
-              className="mr-[0.25em] inline-block"
-              initial={reduce ? false : { opacity: 0, y: "0.4em" }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.08, duration: 0.6, ease: "easeOut" }}
-            >
-              {word}
-            </motion.span>
-          ))}
+          {reduce ? (
+            HEADLINE
+          ) : (
+            <>
+              {/* Real text stays in the DOM for SEO + screen readers; the
+                  typing effect is purely decorative. */}
+              <span className="sr-only">{HEADLINE}</span>
+              <span aria-hidden>
+                <TextType
+                  as="span"
+                  text={[HEADLINE]}
+                  typingSpeed={70}
+                  initialDelay={250}
+                  loop={false}
+                  cursorCharacter="|"
+                  cursorClassName="text-cyan font-normal"
+                />
+              </span>
+            </>
+          )}
         </h1>
 
         <Reveal className="mt-6 max-w-xl">
