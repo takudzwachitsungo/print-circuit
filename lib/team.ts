@@ -3,7 +3,8 @@ export interface TeamMember {
   role: string;
   /** One-line bio in company voice. */
   bio: string;
-  /** Headshot under /public/team; gradient avatar shown when absent. */
+  /** Headshot filename under /public/team/ (e.g. "audrey.jpg"). Resolved at
+      build time — gradient avatar shown when the file isn't present. */
   photo?: string;
 }
 
@@ -15,23 +16,24 @@ export const TEAM: TeamMember[] = [
     name: "Tinotenda",
     role: "IT Technician",
     bio: "Keeps our machines, network and digital workflow running so jobs move smoothly from file to finished.",
-    photo: "/team/tinotenda.jpg",
+    photo: "tinotenda.jpg",
   },
   {
     name: "Percival",
     role: "Graphic Designer",
     bio: "Turns briefs into clean, on-brand artwork that works across print and screen.",
-    photo: "/team/percival.jpg",
+    photo: "percival.jpg",
   },
   {
     name: "Takudzwa Chitsungo",
     role: "Web Developer",
     bio: "Builds and maintains our website and the digital tools behind the studio.",
-    photo: "/team/takudzwa.jpg",
+    photo: "takudzwa.jpg",
   },
   {
     name: "Audrey Sithole",
     role: "Social Media Manager",
     bio: "Runs our social channels and keeps the Print Circuit brand active where customers are.",
+    photo: "audrey.jpg", // drop public/team/audrey.jpg to show her headshot
   },
 ];

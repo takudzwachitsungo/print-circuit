@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/animation/Reveal";
 import { TEAM } from "@/lib/team";
+import { getTeamPhoto } from "@/lib/gallery";
 
 export default function TeamGrid() {
   return (
@@ -11,17 +12,19 @@ export default function TeamGrid() {
         </h2>
       </Reveal>
       <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {TEAM.map((member, i) => (
+        {TEAM.map((member, i) => {
+          const photo = getTeamPhoto(member.photo);
+          return (
           <Reveal
             as="li"
             key={member.name}
             delay={i * 0.05}
             className="h-full rounded-2xl border border-white/10 bg-surface p-6"
           >
-            {member.photo ? (
+            {photo ? (
               <div className="relative aspect-square w-20 overflow-hidden rounded-full border border-white/10">
                 <Image
-                  src={member.photo}
+                  src={photo}
                   alt={member.name}
                   fill
                   sizes="80px"
@@ -40,7 +43,8 @@ export default function TeamGrid() {
             <p className="mt-1 text-sm text-cyan">{member.role}</p>
             <p className="mt-3 text-sm text-muted">{member.bio}</p>
           </Reveal>
-        ))}
+          );
+        })}
       </ul>
     </section>
   );
