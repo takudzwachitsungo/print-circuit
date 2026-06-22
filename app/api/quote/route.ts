@@ -54,7 +54,9 @@ export async function POST(request: Request): Promise<Response> {
 
   try {
     await deliverQuote(result.data);
-  } catch {
+  } catch (err) {
+    // Surface the real SMTP error in the server (Vercel) logs for debugging.
+    console.error("[quote] delivery failed:", err);
     const res: QuoteResponse = {
       ok: false,
       error: "We couldn't submit your request. Please try again.",
