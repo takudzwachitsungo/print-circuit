@@ -29,15 +29,43 @@ preview URLs).
 5. Click **Deploy**. First build is the canonical one; subsequent pushes to
    `master` redeploy.
 
-### Custom domain
-- In the Vercel project → **Settings → Domains**, add `www.printcircuit.co.zw`
-  (and `printcircuit.co.zw` redirecting to `www`).
-- Update DNS at your registrar as Vercel instructs (usually a `CNAME` for `www`
-  → `cname.vercel-dns.com`, and the apex per Vercel's guidance).
-- `SITE.url` is already `https://www.printcircuit.co.zw`, so canonical tags,
-  sitemap, robots and JSON-LD are correct once the domain is live. Until then
-  the site is reachable at the generated `*.vercel.app` URL (canonical/OG still
-  point at the real domain — expected).
+### Custom domain — `printcircuit.co.zw` (DNS managed by Cloudflare)
+
+The domain is registered via Webzim but its **DNS is on Cloudflare**
+(nameservers `ligia.ns.cloudflare.com` / `mike.ns.cloudflare.com`), and the old
+site's records are currently **proxied** (Cloudflare IPs `104.21.x` / `172.67.x`).
+We make **`www` the primary** (matches `SITE.url`) and redirect the apex to it.
+
+1. **Vercel** → project → **Settings → Domains** → add both
+   `www.printcircuit.co.zw` and `printcircuit.co.zw`. Set **`www` as primary**
+   (Vercel then auto-redirects the apex → `www`). Vercel shows the exact records
+   to create — prefer those values if they differ from below.
+2. **Cloudflare** → your domain → **DNS → Records**. Remove the old `@` and `www`
+   A/AAAA records, then add:
+
+   | Type | Name | Value | Proxy status |
+   | --- | --- | --- | --- |
+   | `A` | `@` | `76.76.21.21` | **DNS only (grey cloud)** |
+   | `CNAME` | `www` | `cname.vercel-dns.com` | **DNS only (grey cloud)** |
+
+3. Wait for Vercel to verify and auto-issue the SSL certificate (a few minutes,
+   up to ~1 hour for DNS propagation). Then test **https://www.printcircuit.co.zw**
+   and that `printcircuit.co.zw` redirects to it.
+
+> **Cloudflare gotchas**
+> - Set the records to **DNS only (grey cloud)**, *not* Proxied (orange).
+>   Double-proxying (Cloudflare in front of Vercel) commonly causes redirect
+>   loops or SSL errors. Grey cloud lets Vercel handle SSL + CDN directly (its
+>   recommended setup). If you must keep the orange cloud, set Cloudflare
+>   **SSL/TLS → Overview → Full (strict)** and disable any conflicting page
+>   rules first.
+> - Make sure **Settings → Deployment Protection** on the Vercel project is
+>   **off for Production**, or the public can't reach the site (that's what
+>   caused the earlier `401` on the preview URL).
+
+`SITE.url` is already `https://www.printcircuit.co.zw`, so canonical tags,
+sitemap, robots and JSON-LD are correct the moment the domain goes live. Until
+then the site is reachable at the generated `*.vercel.app` URL.
 
 ### CLI alternative
 `npm i -g vercel` → `vercel login` → `vercel link` → `vercel --prod`. The
