@@ -3,25 +3,31 @@ export interface TeamMember {
   role: string;
   /** One-line bio in company voice. */
   bio: string;
+  /** Headshot under /public/team; gradient avatar shown when absent. */
+  photo?: string;
 }
 
 /** Real team members only (no placeholder Tech001/002 names from the old site).
-    Bios are role-level and honest — adjust wording as the team confirms it. */
+    Bios are role-level and honest — adjust wording as the team confirms it.
+    Photos are from the old site (printcircuit.co.zw). */
 export const TEAM: TeamMember[] = [
   {
     name: "Tinotenda",
     role: "IT Technician",
     bio: "Keeps our machines, network and digital workflow running so jobs move smoothly from file to finished.",
+    photo: "/team/tinotenda.jpg",
   },
   {
     name: "Percival",
     role: "Graphic Designer",
     bio: "Turns briefs into clean, on-brand artwork that works across print and screen.",
+    photo: "/team/percival.jpg",
   },
   {
     name: "Takudzwa Chitsungo",
     role: "Web Developer",
     bio: "Builds and maintains our website and the digital tools behind the studio.",
+    photo: "/team/takudzwa.jpg",
   },
   {
     name: "Audrey Sithole",

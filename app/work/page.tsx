@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import WorkGallery from "@/components/work/WorkGallery";
+import { PROJECTS } from "@/lib/projects";
+import { getCover } from "@/lib/gallery";
 
 export const metadata: Metadata = {
   title: "Work",
@@ -10,6 +12,9 @@ export const metadata: Metadata = {
 };
 
 export default function WorkPage() {
+  const covers = Object.fromEntries(
+    PROJECTS.map((p) => [p.slug, getCover(p.slug)]),
+  );
   return (
     <main className="mx-auto max-w-7xl px-6 pb-24 pt-32">
       <p className="font-display text-sm uppercase tracking-[0.2em] text-magenta">
@@ -22,7 +27,7 @@ export default function WorkPage() {
         A growing selection of the printing, branding, signage and web work we&rsquo;ve
         delivered. Filter by what you need.
       </p>
-      <WorkGallery />
+      <WorkGallery covers={covers} />
     </main>
   );
 }

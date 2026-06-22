@@ -12,9 +12,12 @@ test("client-side navigation away from home renders the target page", async ({
   page.on("pageerror", (e) => errors.push(e.message));
 
   await page.goto("/");
+  // Ensure the home page has rendered before tapping (dev compiles on demand;
+  // under parallel load a too-early click can miss the link).
+  await expect(page.getByRole("heading", { level: 1 }).first()).toBeVisible();
   await page.getByRole("link", { name: "About", exact: true }).first().click();
 
-  await expect(page).toHaveURL(/\/about$/);
+  await expect(page).toHaveURL(/\/about$/, { timeout: 15000 });
   await expect(
     page.getByRole("heading", { level: 1, name: /modern brands/i }),
   ).toBeVisible();
