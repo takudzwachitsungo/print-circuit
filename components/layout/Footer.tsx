@@ -12,7 +12,7 @@ export default function Footer() {
             href="/"
             className="flex items-center gap-2 font-display text-xl font-bold text-primary"
           >
-            <Image src="/logo.png" alt="" width={56} height={56} className="h-14 w-14" />
+            <Image src="/logo.png" alt="" width={256} height={240} className="h-20 w-auto" />
             Print Circuit
           </Link>
           <p className="mt-4 max-w-sm text-sm text-muted">
