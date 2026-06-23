@@ -12,8 +12,7 @@ export default function AboutHero() {
           New, hungry, and built for modern brands.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted">
-          We&rsquo;re a Harare print and design studio on a simple mission: make
-          every business we work with look professional, in print and online.
+          We&rsquo;re a Harare print and design studio on a simple mission: To help businesses and individuals improve performance and productivity through high-quality, reliable, and creative printing and branding solutions.
         </p>
       </div>
     </section>
