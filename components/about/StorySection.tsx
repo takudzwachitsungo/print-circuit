@@ -9,16 +9,10 @@ export default function StorySection() {
         </h2>
         <div className="mt-6 space-y-4 text-lg text-muted">
           <p>
-            Print Circuit was incorporated on 20 May 2026 — a young studio with
-            an old-fashioned belief: that good print still matters. We started
-            because too many small businesses were settling for dated, templated
-            work that didn&rsquo;t reflect how good they actually are.
+             Printcircuit Enterprises (Private) Limited is aZimbabwean printing and branding company committed to quality, innovation, integrity, and reliability. Since our incorporation on 20 May 2026, we have been providing creative and professional printing, branding, signage, and design solutions for businesses and individuals. Our services include graphic design, digital and large-format printing, advertising materials, branding, and stationery supplies. At Printcircuit Enterprises, we are dedicated to delivering dependable solutions that help our clients communicate effectively and stand out professionally.
           </p>
           <p>
-            We pair modern design with dependable production, so whether you need
-            a single business card or a full brand rollout, the result looks
-            sharp and lands on time. We&rsquo;re new and hungry, and we treat
-            every project like it&rsquo;s our calling card — because it is.
+           At Printcircuit Enterprises, we believe every brand has a story and great printing is how you tell it clearly. Whether you’re looking to promote your business, refresh your brand, or produce materials for a specific purpose, we&rsquo;re here to help you get it done professionally.
           </p>
         </div>
       </Reveal>

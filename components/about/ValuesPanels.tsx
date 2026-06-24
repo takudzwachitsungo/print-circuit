@@ -3,15 +3,15 @@ import Reveal from "@/components/animation/Reveal";
 const PANELS: { title: string; body: string }[] = [
   {
     title: "Mission",
-    body: "To make professional design and printing accessible to every business in Zimbabwe — fast, reliable, and done right the first time.",
+    body: "To help businesses and individuals improve performance and productivity through high-quality, reliable, and creative printing and branding solutions.",
   },
   {
     title: "Vision",
-    body: "To become Harare's most trusted name in print and brand, known for quality work and genuine care for our clients.",
+    body: "To become a trusted leading printing and branding company in Zimbabwe, known for quality, innovation, and excellent customer service.",
   },
   {
     title: "Values",
-    body: "Craftsmanship in every detail, reliability you can plan around, honest advice and pricing, and pride in serving our local community.",
+    body: "Quality, innovation, integrity, reliability, and customer focus.",
   },
 ];
 
