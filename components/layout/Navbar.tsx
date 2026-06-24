@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import MagneticButton from "@/components/ui/MagneticButton";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 const LINKS = [
   { href: "/services", label: "Services" },
@@ -83,6 +84,7 @@ export default function Navbar() {
             </Link>
           ))}
           <MagneticButton href="/contact">Get a Quote</MagneticButton>
+          <SocialLinks className="pt-2" />
         </div>
       )}
     </header>

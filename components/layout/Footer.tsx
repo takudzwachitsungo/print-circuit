@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { SITE } from "@/lib/site";
+import SocialLinks from "@/components/ui/SocialLinks";
 
 export default function Footer() {
   return (
@@ -50,6 +51,8 @@ export default function Footer() {
               </a>
             </p>
           </address>
+
+          <SocialLinks className="mt-6" />
         </div>
 
         {/* Services */}
@@ -94,16 +97,6 @@ export default function Footer() {
               >
                 Get a Quote
               </Link>
-            </li>
-            <li>
-              <a
-                href={SITE.socials.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-primary"
-              >
-                Twitter / X
-              </a>
             </li>
           </ul>
 
