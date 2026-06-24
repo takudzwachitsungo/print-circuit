@@ -59,6 +59,10 @@ export default function Navbar() {
             </Link>
           ))}
           <MagneticButton href="/contact">Get a Quote</MagneticButton>
+          <SocialLinks
+            variant="compact"
+            className="border-l border-white/15 pl-4"
+          />
         </div>
 
         <button
