@@ -57,3 +57,19 @@ test("a failed submission keeps the basket", async ({ page }) => {
   ).toContainText("Server down.");
   await expect(page.getByRole("button", { name: "Quote basket, 1 item" })).toBeVisible();
 });
+
+test("Enter in a step-1 field moves on instead of submitting early", async ({ page }) => {
+  await addBusinessCards(page);
+  let posts = 0;
+  await page.route("**/api/quote", async (route) => {
+    posts++;
+    await route.fulfill({ json: { ok: true } });
+  });
+  await page.goto("/contact");
+  const form = page.getByRole("form", { name: "Request a quote" });
+  await form.getByLabel("Business Cards quantity", { exact: true }).fill("300");
+  await form.getByLabel("Business Cards quantity", { exact: true }).press("Enter");
+  await expect(form.getByText(/Step 2 of 3/)).toBeVisible();
+  expect(posts).toBe(0);
+  await expect(page.getByRole("button", { name: "Quote basket, 1 item" })).toBeVisible();
+});

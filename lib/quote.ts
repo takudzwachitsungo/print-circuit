@@ -29,6 +29,13 @@ export const QUOTE_LIMITS = {
   note: 500,
 } as const;
 
+/** Whether the client should retry via EmailJS. Only for network errors
+    (`null`) and server failures — never for validation errors (4xx), or a
+    quote with missing contact details would be sent. */
+export function shouldUseFallback(status: number | null): boolean {
+  return status === null || status >= 500;
+}
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 const str = (v: unknown) => (typeof v === "string" ? v.trim() : "");

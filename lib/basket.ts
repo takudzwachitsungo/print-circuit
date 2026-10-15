@@ -30,8 +30,14 @@ export function clampQty(value: unknown): number {
   return Math.min(QUOTE_LIMITS.maxQty, Math.max(1, Math.floor(n)));
 }
 
+/** Cut to `max` characters without splitting an emoji (a lone surrogate
+    makes encodeURIComponent throw when the WhatsApp link is built). */
+function truncate(text: string, max: number): string {
+  return Array.from(text).slice(0, max).join("");
+}
+
 function cleanText(value: unknown, max: number): string | undefined {
-  return typeof value === "string" && value !== "" ? value.slice(0, max) : undefined;
+  return typeof value === "string" && value !== "" ? truncate(value, max) : undefined;
 }
 
 function line(slug: string, qty: number, option?: string, note?: string): BasketItem {
@@ -72,12 +78,12 @@ export function addItem(items: BasketItem[], input: AddInput): BasketItem[] {
   if (existing) {
     return items.map((i) =>
       i === existing
-        ? line(i.slug, clampQty(i.qty + qty), i.option, input.note ?? i.note)
+        ? line(i.slug, clampQty(i.qty + qty), i.option, cleanText(input.note, QUOTE_LIMITS.note) ?? i.note)
         : i,
     );
   }
   if (items.length >= QUOTE_LIMITS.maxItems) return items;
-  return [...items, line(input.slug, qty, input.option, input.note)];
+  return [...items, line(input.slug, qty, input.option, cleanText(input.note, QUOTE_LIMITS.note))];
 }
 
 export function updateItem(
@@ -91,7 +97,7 @@ export function updateItem(
           i.slug,
           patch.qty === undefined ? i.qty : clampQty(patch.qty),
           i.option,
-          patch.note === undefined ? i.note : patch.note.slice(0, QUOTE_LIMITS.note),
+          patch.note === undefined ? i.note : truncate(patch.note, QUOTE_LIMITS.note),
         )
       : i,
   );

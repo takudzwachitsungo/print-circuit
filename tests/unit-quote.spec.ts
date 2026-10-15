@@ -1,5 +1,5 @@
 import { test, expect } from "@playwright/test";
-import { formatQuoteItems, validateQuote } from "../lib/quote";
+import { formatQuoteItems, shouldUseFallback, validateQuote } from "../lib/quote";
 
 const contact = { name: "Test User", email: "test@example.com", phone: "+263 78 000 0000" };
 
@@ -64,4 +64,12 @@ test("formatQuoteItems renders one line per item", () => {
       { name: "Vinyl Banners", qty: 2 },
     ]),
   ).toBe("• Business Cards × 500 (Matte) — Double-sided\n• Vinyl Banners × 2");
+});
+
+test("EmailJS fallback only for network errors and server failures", () => {
+  expect(shouldUseFallback(null)).toBe(true); // network error
+  expect(shouldUseFallback(500)).toBe(true);
+  expect(shouldUseFallback(503)).toBe(true);
+  expect(shouldUseFallback(400)).toBe(false); // validation error — never send
+  expect(shouldUseFallback(422)).toBe(false);
 });

@@ -109,3 +109,14 @@ test("WhatsApp text round-trips special characters", () => {
   const text = new URL(href).searchParams.get("text");
   expect(text).toBe(buildWhatsAppMessage(items));
 });
+
+test("note truncation never splits an emoji (WhatsApp link stays encodable)", () => {
+  const note = "n".repeat(499) + "🎉🎉🎉";
+  const parsed = parseBasket(JSON.stringify([{ slug: "business-cards", qty: 1, note }]), PRODUCT_SLUGS);
+  expect(() => whatsappHref("https://wa.me/1", toQuoteItems(parsed))).not.toThrow();
+  const updated = updateItem([{ slug: "business-cards", qty: 1 }], "business-cards|", { note });
+  expect(() => whatsappHref("https://wa.me/1", toQuoteItems(updated))).not.toThrow();
+  const added = addItem([], { slug: "business-cards", note: note + "x".repeat(600) });
+  expect(Array.from(added[0].note!).length).toBeLessThanOrEqual(500);
+  expect(() => whatsappHref("https://wa.me/1", toQuoteItems(added))).not.toThrow();
+});

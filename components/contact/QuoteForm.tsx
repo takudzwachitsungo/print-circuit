@@ -5,7 +5,7 @@ import { useState } from "react";
 import { SITE } from "@/lib/site";
 import { getProduct } from "@/lib/products";
 import { itemKey, toQuoteItems } from "@/lib/basket";
-import { formatQuoteItems, type QuoteRequest } from "@/lib/quote";
+import { formatQuoteItems, shouldUseFallback, type QuoteRequest } from "@/lib/quote";
 import { useBasket } from "@/components/shop/BasketProvider";
 import QtyInput from "@/components/shop/QtyInput";
 import { buttonClass } from "@/components/ui/ButtonLink";
@@ -66,6 +66,12 @@ export default function QuoteForm() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    // Enter in a field before the last step (implicit submission) moves on
+    // instead of sending a quote without contact details.
+    if (step < steps.length - 1) {
+      if (canAdvance) setStep((s) => s + 1);
+      return;
+    }
     setStatus("submitting");
     setError("");
     const payload: QuoteRequest = hasItems
@@ -82,12 +88,16 @@ export default function QuoteForm() {
         body: JSON.stringify(payload),
       });
       if (res.ok) return succeed();
-      if (await sendViaEmailJs(payload).catch(() => false)) return succeed();
+      if (shouldUseFallback(res.status) && (await sendViaEmailJs(payload).catch(() => false))) {
+        return succeed();
+      }
       const body = await res.json().catch(() => ({}));
       setStatus("error");
       setError(typeof body.error === "string" ? body.error : "Something went wrong.");
     } catch {
-      if (await sendViaEmailJs(payload).catch(() => false)) return succeed();
+      if (shouldUseFallback(null) && (await sendViaEmailJs(payload).catch(() => false))) {
+        return succeed();
+      }
       setStatus("error");
       setError("We couldn't reach the server.");
     }
