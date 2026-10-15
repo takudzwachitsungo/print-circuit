@@ -7,6 +7,9 @@ const PORT = 3100;
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
+  // The dev server compiles routes on demand; client navigations under
+  // parallel load can take longer than the 5s default.
+  expect: { timeout: 10_000 },
   use: {
     baseURL: `http://localhost:${PORT}`,
   },
