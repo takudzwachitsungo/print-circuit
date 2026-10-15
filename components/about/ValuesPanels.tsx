@@ -15,22 +15,24 @@ const PANELS: { title: string; body: string }[] = [
   },
 ];
 
+const TINTS = ["bg-tint-cyan", "bg-tint-pink", "bg-tint-butter"];
+
 export default function ValuesPanels() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
       <Reveal>
-        <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
+        <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
           What we stand for
         </h2>
       </Reveal>
-      <div className="mt-10 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid gap-4 md:grid-cols-3">
         {PANELS.map((panel, i) => (
           <Reveal key={panel.title} delay={i * 0.05}>
-            <div className="h-full rounded-2xl border border-white/10 bg-surface p-8">
-              <h3 className="font-display text-xl font-bold text-cyan">
+            <div className={`h-full rounded-3xl p-8 ${TINTS[i]}`}>
+              <h3 className="font-display text-xl font-medium text-primary">
                 {panel.title}
               </h3>
-              <p className="mt-4 text-muted">{panel.body}</p>
+              <p className="mt-4 text-primary/75">{panel.body}</p>
             </div>
           </Reveal>
         ))}

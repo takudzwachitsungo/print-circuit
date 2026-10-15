@@ -1,4 +1,5 @@
 import { SITE } from "@/lib/site";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 const MAP_SRC =
   "https://www.google.com/maps?q=" +
@@ -7,12 +8,12 @@ const MAP_SRC =
 
 export default function ContactInfo() {
   return (
-    <aside aria-label="Our contact details" className="space-y-8">
+    <aside aria-label="Our contact details" className="space-y-6 rounded-3xl bg-tint-butter p-8">
       <div>
-        <h2 className="font-display text-xl font-bold text-primary">
+        <h2 className="font-display text-xl font-medium text-primary">
           Visit or call us
         </h2>
-        <address className="mt-4 space-y-2 not-italic text-muted">
+        <address className="mt-4 space-y-2 not-italic text-primary/75">
           <p>{SITE.address}</p>
           {SITE.phones.map((phone) => (
             <p key={phone}>
@@ -30,29 +31,26 @@ export default function ContactInfo() {
             </a>
           </p>
         </address>
-        <a
-          href={SITE.whatsapp}
-          className="mt-4 inline-block rounded-full border border-cyan/40 px-5 py-2 text-sm text-cyan hover:border-cyan"
-        >
+        <ButtonLink href={SITE.whatsapp} variant="whatsapp" external className="mt-4">
           Chat on WhatsApp
-        </a>
+        </ButtonLink>
       </div>
 
       <div>
-        <h3 className="font-display text-sm uppercase tracking-[0.2em] text-muted">
+        <h3 className="text-xs font-medium uppercase tracking-[0.2em] text-primary/60">
           Opening hours
         </h3>
         <dl className="mt-3 space-y-1 text-sm">
           {SITE.hours.map((h) => (
             <div key={h.days} className="flex justify-between gap-6">
-              <dt className="text-muted">{h.days}</dt>
+              <dt className="text-primary/70">{h.days}</dt>
               <dd className="text-primary">{h.time}</dd>
             </div>
           ))}
         </dl>
       </div>
 
-      <div className="overflow-hidden rounded-2xl border border-white/10">
+      <div className="overflow-hidden rounded-2xl border border-line">
         <iframe
           title="Print Circuit location map"
           src={MAP_SRC}

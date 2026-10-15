@@ -4,7 +4,7 @@ import StorySection from "@/components/about/StorySection";
 import ValuesPanels from "@/components/about/ValuesPanels";
 import TeamGrid from "@/components/about/TeamGrid";
 import AboutStats from "@/components/about/AboutStats";
-import CtaBand from "@/components/home/CtaBand";
+import OrderBand from "@/components/home/OrderBand";
 
 export const metadata: Metadata = {
   title: "About",
@@ -22,7 +22,7 @@ export default function AboutPage() {
       <ValuesPanels />
       <TeamGrid />
       <AboutStats />
-      <CtaBand />
+      <OrderBand />
     </main>
   );
 }
