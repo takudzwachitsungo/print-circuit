@@ -94,7 +94,7 @@ print-circuit/
 | `lib/services.ts` | The content of each **service page** (titles, descriptions, "what's included", FAQs). |
 | `lib/projects.ts` | The **portfolio / "Our work" projects** (title, client, year, category, summary). |
 | `lib/team.ts` | The **team members** on the About page (name, role, bio, photo file). |
-| `lib/showcase.ts` | The **scrolling image strip** under the homepage hero ("what we print"). |
+| `lib/products.ts` | The **shop catalogue** — every product's name, one-line description, options, photo and badge. |
 | `lib/stats.ts` | The big numbers on the site (e.g. projects completed, clients served). |
 
 ### `public/` — the images
@@ -103,7 +103,7 @@ print-circuit/
 | --- | --- |
 | `public/work/<project>/` | Photos for each **portfolio project**. The first image (alphabetically) is the **cover**; all images show in that project's gallery. |
 | `public/team/` | **Team headshots** (e.g. `tinotenda.jpg`, `audrey.jpg`). |
-| `public/showcase/` | Images for the **homepage scrolling strip**. |
+| `public/showcase/` | **Product photos** used in the shop (see Section 7). |
 | `public/logo.png` | The **logo** in the top bar and footer. |
 
 > **What's a "slug"?** A slug is the short name in the web address, e.g.
@@ -182,14 +182,36 @@ and the `{ }` brackets exactly as they are:
 
 ---
 
-## 7. Changing the homepage scrolling strip (the "what we print" images)
+## 7. Adding or editing PRODUCTS in the shop
 
-Images are in `public/showcase/`; the list is in `lib/showcase.ts`. Each item:
+Everything in the shop (and the "Most requested" cards on the homepage) comes
+from **`lib/products.ts`**. Each product looks like this:
+
 ```ts
-{ label: "Business Cards", src: "/showcase/business-cards.jpg", alt: "Printed business cards" },
+{
+  slug: "business-cards",                 // web address: /shop/business-cards — keep it lowercase-with-dashes
+  name: "Business Cards",                 // shown on the card
+  category: "printing",                   // one of: printing, graphic-design-branding, signage-advertising, stationery-supplies, web-development
+  blurb: "Single or double-sided …",      // one short line
+  options: ["Matte", "Gloss", "Spot UV"], // optional — choices the customer can pick
+  image: "/showcase/business-cards.jpg",  // optional — leave out to show a coloured placeholder
+  badge: "Popular",                       // optional — "Popular", "Fast turnaround" or "New"
+  featured: true,                         // optional — the first two featured products appear in the big homepage cards
+},
 ```
-- **Swap an image:** replace the file in `public/showcase/` with the same name.
-- **Change a label:** edit the text inside the `label` quotes.
+
+- **Change wording:** edit the text inside the quotes.
+- **Add a photo:** upload it to `public/showcase/` (square photos look best,
+  under ~300 KB), then set `image: "/showcase/your-file.jpg"`.
+- **Add a product:** copy a whole `{ … },` block, paste it in the right
+  category section, and give it a **new, unique slug**.
+- **Remove a product:** delete its whole `{ … },` block. Anyone who had it in
+  their quote basket simply won't see it any more.
+- **Don't rename a slug** of a live product unless you have to — it changes
+  the page's web address.
+
+There are **no prices** on the site on purpose: customers add products to a
+quote and you reply with pricing.
 
 ---
 

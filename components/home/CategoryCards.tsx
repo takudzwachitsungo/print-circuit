@@ -19,7 +19,7 @@ export default function CategoryCards() {
           />
         </div>
       </Reveal>
-      <ul className="-mx-4 mt-8 flex snap-x gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-5">
+      <ul className="-mx-4 mt-8 flex snap-x scroll-px-4 gap-4 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 lg:grid-cols-5">
         {SITE.services.map((s, i) => {
           const Icon = CATEGORY_ICONS[s.slug];
           return (

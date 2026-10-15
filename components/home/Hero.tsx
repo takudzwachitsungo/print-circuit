@@ -41,7 +41,7 @@ export default function Hero() {
   return (
     <section aria-label="Introduction" className="mx-auto grid w-full max-w-7xl gap-4 px-4 pt-6 sm:px-6 lg:grid-cols-12">
       <div className="relative overflow-hidden rounded-3xl bg-tint-cyan p-8 sm:p-12 lg:col-span-7">
-        <div aria-hidden className="absolute right-8 top-8 h-24 w-24 rounded-full bg-magenta/25 sm:h-32 sm:w-32" />
+        <div aria-hidden className="absolute right-8 top-8 hidden h-32 w-32 rounded-full bg-magenta/25 sm:block" />
         <div aria-hidden className="absolute -bottom-40 -right-24 h-96 w-96 rounded-full bg-cyan/15" />
         <div className="relative">
           <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/60">

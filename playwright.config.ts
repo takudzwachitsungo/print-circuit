@@ -17,7 +17,9 @@ export default defineConfig({
     baseURL: `http://localhost:${PORT}`,
   },
   webServer: {
-    command: `npm run dev -- --port ${PORT}`,
+    // Start from a clean dev cache: a dev server killed mid-write (as at the
+    // end of every test run) can leave .next/dev stale, serving 404s/500s.
+    command: `node -e "require('fs').rmSync('.next/dev',{recursive:true,force:true})" && npm run dev -- --port ${PORT}`,
     url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
