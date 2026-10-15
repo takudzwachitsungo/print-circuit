@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
-import Marquee from "@/components/home/Marquee";
-import AboutTeaser from "@/components/home/AboutTeaser";
-import ServicesGrid from "@/components/home/ServicesGrid";
-import FeaturedWork from "@/components/home/FeaturedWork";
-import Process from "@/components/home/Process";
+import CategoryCards from "@/components/home/CategoryCards";
+import MostRequested from "@/components/home/MostRequested";
+import RecentWork from "@/components/home/RecentWork";
+import HowItWorks from "@/components/home/HowItWorks";
 import Testimonials from "@/components/home/Testimonials";
-import CtaBand from "@/components/home/CtaBand";
+import OrderBand from "@/components/home/OrderBand";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -15,15 +14,14 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
+    <main>
       <Hero />
-      <Marquee />
-      <AboutTeaser />
-      <ServicesGrid />
-      <FeaturedWork />
-      <Process />
+      <CategoryCards />
+      <MostRequested />
+      <RecentWork />
+      <HowItWorks />
       <Testimonials />
-      <CtaBand />
-    </>
+      <OrderBand />
+    </main>
   );
 }

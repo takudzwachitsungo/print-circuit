@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 
-test("home shows process steps and closing CTA", async ({ page }) => {
+test("how-it-works steps and the order band", async ({ page }) => {
   await page.goto("/");
-  await expect(page.getByText("Enquire")).toBeVisible();
-  await expect(page.getByText("Deliver")).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: /Let's print something great/i }),
-  ).toHaveAttribute("href", "/contact");
+  await expect(page.getByText("Choose products", { exact: true })).toBeVisible();
+  await expect(page.getByText("Collect or delivery", { exact: true })).toBeVisible();
+  const band = page.getByRole("region", { name: "Place an order" });
+  await expect(band.getByRole("heading", { name: "Ready to place an order?" })).toBeVisible();
+  await expect(band.getByRole("link", { name: "Start a quote" })).toHaveAttribute("href", "/shop");
 });
