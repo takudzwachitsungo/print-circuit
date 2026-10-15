@@ -217,8 +217,9 @@ export interface BasketItem {
 - Stored in `localStorage` under `pc-quote-basket` as JSON. Every read/write is
   wrapped in try/catch; unreadable or invalid data → empty basket. Items whose
   slug no longer exists in `PRODUCTS` are dropped on load.
-- Adding a slug already in the basket increments its quantity rather than
-  duplicating it.
+- A basket line is one product **plus one option**: adding the same product
+  with the same option increments that line's quantity; a different option
+  (e.g. 500 Matte + 200 Gloss business cards) becomes a separate line.
 - A client context provider (mounted in `app/layout.tsx`) exposes `items`,
   `count`, `add`, `update`, `remove`, `clear`, `open`/`close` for the drawer.
   Renders an empty basket on the server and hydrates from storage on mount (no
