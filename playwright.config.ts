@@ -7,6 +7,9 @@ const PORT = 3100;
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
+  // One worker: when two tests make the dev server compile the same route at
+  // once, Next dev can serve a 500 ("Unexpected end of JSON input").
+  workers: 1,
   // The dev server compiles routes on demand; client navigations under
   // parallel load can take longer than the 5s default.
   expect: { timeout: 10_000 },
