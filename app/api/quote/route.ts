@@ -1,5 +1,10 @@
 import nodemailer from "nodemailer";
-import { validateQuote, type QuoteRequest, type QuoteResponse } from "@/lib/quote";
+import {
+  formatQuoteItems,
+  validateQuote,
+  type QuoteRequest,
+  type QuoteResponse,
+} from "@/lib/quote";
 
 // Backend-ready seam. Sends the validated quote by SMTP when the mail env vars
 // are configured; otherwise logs server-side so nothing is lost (dev/CI default).
@@ -31,8 +36,9 @@ async function deliverQuote(data: QuoteRequest): Promise<void> {
       `Name: ${data.name}`,
       `Email: ${data.email}`,
       `Phone: ${data.phone}`,
+      ...(data.items?.length ? ["", "Products:", formatQuoteItems(data.items)] : []),
       "",
-      data.details,
+      data.details || "(no extra message)",
     ].join("\n"),
   });
 }
