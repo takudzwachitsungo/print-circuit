@@ -16,5 +16,5 @@ test("manifest is served with the brand name and theme colour", async ({ request
   expect(res.status()).toBe(200);
   const manifest = await res.json();
   expect(manifest.name).toContain("Print Circuit");
-  expect(manifest.theme_color).toBe("#0A0A0C");
+  expect(manifest.theme_color).toBe("#F7F5F0");
 });

@@ -15,7 +15,7 @@ export default function Image() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "80px",
-          background: "#0A0A0C",
+          background: "#F7F5F0",
           fontFamily: "sans-serif",
         }}
       >
@@ -24,10 +24,10 @@ export default function Image() {
           <div style={{ width: 48, height: 48, borderRadius: 9999, background: "#EC008C" }} />
           <div style={{ width: 48, height: 48, borderRadius: 9999, background: "#FFF200" }} />
         </div>
-        <div style={{ fontSize: 96, fontWeight: 700, color: "#FFFFFF", lineHeight: 1.1 }}>
+        <div style={{ fontSize: 96, fontWeight: 700, color: "#16140F", lineHeight: 1.1 }}>
           Print Circuit
         </div>
-        <div style={{ fontSize: 40, color: "#A1A1AA", marginTop: 24 }}>
+        <div style={{ fontSize: 40, color: "#6B6860", marginTop: 24 }}>
           Printing, branding & signage in Harare, Zimbabwe
         </div>
       </div>

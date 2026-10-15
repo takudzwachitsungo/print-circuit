@@ -32,7 +32,7 @@ export default function FloatingButtons() {
           type="button"
           onClick={toTop}
           aria-label="Back to top"
-          className="grid h-12 w-12 place-items-center rounded-full border border-white/15 bg-surface/90 text-primary shadow-lg backdrop-blur transition-colors hover:border-cyan hover:text-cyan"
+          className="grid h-12 w-12 place-items-center rounded-full border border-line bg-surface text-primary shadow-lg transition-colors hover:border-primary"
         >
           <svg
             width="20"

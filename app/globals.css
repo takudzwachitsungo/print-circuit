@@ -1,13 +1,21 @@
 @import "tailwindcss";
 
-/* ── Premium Ink design tokens (Tailwind v4 @theme) ───────────────────
-   Generates utilities: bg-base, bg-surface, text-primary, text-muted,
-   text-cyan/magenta/yellow (and bg-* variants), font-display, font-body. */
+/* ── Storefront design tokens (Tailwind v4 @theme) ───────────────────
+   Light, warm palette with soft CMYK tints. Generates utilities: bg-base,
+   bg-surface, text-primary, text-muted, border-line, bg-ink, bg-tint-cyan,
+   bg-tint-pink, bg-tint-butter, text-ochre, text-cyan/magenta (and bg-*
+   variants), font-display, font-body. */
 @theme {
-  --color-base: #0a0a0c;
-  --color-surface: #141417;
-  --color-primary: #f5f5f2;
-  --color-muted: #9a9aa0;
+  --color-base: #f7f5f0;
+  --color-surface: #fffdf8;
+  --color-primary: #16140f;
+  --color-muted: #6b6860;
+  --color-line: #e7e3da;
+  --color-ink: #16140f;
+  --color-tint-cyan: #dcf1f8;
+  --color-tint-pink: #fbe1ef;
+  --color-tint-butter: #fff6c7;
+  --color-ochre: #9a7b00;
   --color-cyan: #00aeef;
   --color-magenta: #ec008c;
   --color-yellow: #fff200;
@@ -25,14 +33,10 @@
   --accent-yellow: #fff200;
 }
 
-/* Infinite marquee (track is duplicated; -50% = one full set) */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-.animate-marquee {
-  animation: marquee 30s linear infinite;
+/* CMYK halftone dots — product/work image placeholders */
+.dot-pattern {
+  background-image: radial-gradient(circle, rgb(22 20 15 / 0.12) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
 }
 
 /* Accessibility: honour reduced-motion everywhere */

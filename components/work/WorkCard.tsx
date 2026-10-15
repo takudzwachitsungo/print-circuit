@@ -7,15 +7,12 @@ export default function WorkCard({
   cover,
 }: {
   project: Project;
-  /** Cover image from public/work/<slug>/; gradient shown when absent. */
+  /** Cover image from public/work/<slug>/; halftone placeholder when absent. */
   cover?: string | null;
 }) {
   return (
-    <Link
-      href={`/work/${project.slug}`}
-      className="group block overflow-hidden rounded-2xl border border-white/10"
-    >
-      <div className="relative aspect-[4/3] overflow-hidden">
+    <Link href={`/work/${project.slug}`} className="group block">
+      <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-tint-butter">
         {cover ? (
           <Image
             src={cover}
@@ -25,16 +22,19 @@ export default function WorkCard({
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
-          <div className="absolute inset-0 bg-gradient-to-br from-surface via-base to-surface transition-transform duration-500 group-hover:scale-105" />
+          <div className="dot-pattern absolute inset-0" />
         )}
-        <span className="absolute left-4 top-4 rounded-full bg-base/70 px-3 py-1 text-xs text-muted backdrop-blur">
+        <span className="absolute left-3 top-3 rounded-full bg-surface px-2.5 py-1 text-xs font-medium text-primary">
           {project.category}
         </span>
       </div>
-      <div className="flex items-center justify-between p-5">
-        <h3 className="font-display text-lg text-primary">{project.title}</h3>
-        <span className="text-muted transition-colors group-hover:text-cyan">→</span>
+      <div className="mt-4 flex items-center justify-between gap-4">
+        <h3 className="font-display text-lg font-medium text-primary">{project.title}</h3>
+        <span aria-hidden className="text-muted transition-colors group-hover:text-magenta">
+          →
+        </span>
       </div>
+      <p className="mt-1 text-sm text-muted">{project.summary}</p>
     </Link>
   );
 }

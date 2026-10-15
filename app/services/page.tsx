@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 pb-24 pt-32">
-      <p className="font-display text-sm uppercase tracking-[0.2em] text-cyan">
+    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6">
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
         Services
       </p>
-      <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-primary sm:text-6xl">
+      <h1 className="mt-2 max-w-3xl font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
         Everything you need to look professional in print and online.
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted">
-        Five service lines, one team. Hover a service to see what we do, or open
-        it for the full picture.
+      <p className="mt-4 max-w-2xl text-muted">
+        Five service lines, one team. Open a service for the full picture, or jump
+        straight to the shop.
       </p>
       <ServicesList />
     </main>

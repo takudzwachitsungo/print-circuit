@@ -1,30 +1,42 @@
-import MagneticButton from "@/components/ui/MagneticButton";
+import Image from "next/image";
+import ButtonLink from "@/components/ui/ButtonLink";
 import { ACCENT, type Service } from "@/lib/services";
+import { CATEGORY_SHORT, isCategory } from "@/lib/products";
+import { getServiceSamples } from "@/lib/gallery";
 
 export default function ServiceHero({ service }: { service: Service }) {
   const accent = ACCENT[service.accent];
+  const cover = getServiceSamples(service.slug)[0];
+  const short = isCategory(service.slug) ? CATEGORY_SHORT[service.slug] : service.label;
   return (
-    <section className="relative overflow-hidden px-6 pt-32 pb-16">
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute -top-32 left-1/2 h-96 w-[120%] -translate-x-1/2 bg-gradient-to-b ${accent.gradientFrom} to-transparent opacity-40 blur-3xl`}
-      />
-      <div className="relative mx-auto max-w-7xl">
-        <p
-          className={`font-display text-sm uppercase tracking-[0.2em] ${accent.text}`}
-        >
-          Service
-        </p>
-        <h1 className="mt-4 max-w-4xl font-display text-4xl font-bold text-primary sm:text-6xl">
+    <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pt-6 sm:px-6 lg:grid-cols-12">
+      <div className={`rounded-3xl p-8 sm:p-12 lg:col-span-7 ${accent.tint}`}>
+        <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/60">Service</p>
+        <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
           {service.seoTitle}
         </h1>
-        <p className="mt-4 max-w-3xl font-display text-xl text-muted sm:text-2xl">
-          {service.tagline}
-        </p>
-        <p className="mt-6 max-w-2xl text-lg text-muted">{service.intro}</p>
-        <div className="mt-10">
-          <MagneticButton href="/contact">Request a quote</MagneticButton>
+        <p className="mt-4 font-display text-xl text-primary/80">{service.tagline}</p>
+        <p className="mt-4 max-w-2xl text-primary/70">{service.intro}</p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <ButtonLink href="/contact">Request a quote</ButtonLink>
+          <ButtonLink href={`/shop?cat=${service.slug}`} variant="outline">
+            Browse {short} products
+          </ButtonLink>
         </div>
+      </div>
+      <div className="relative min-h-64 overflow-hidden rounded-3xl bg-ink lg:col-span-5">
+        {cover ? (
+          <Image
+            src={cover}
+            alt={`${service.label} sample`}
+            fill
+            priority
+            sizes="(min-width: 1024px) 40vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <div className="dot-pattern absolute inset-0 bg-tint-butter" />
+        )}
       </div>
     </section>
   );

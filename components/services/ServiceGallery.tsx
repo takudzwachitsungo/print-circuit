@@ -9,9 +9,9 @@ export default function ServiceGallery({ service }: { service: Service }) {
   const items = samples.length > 0 ? samples : [null, null, null];
 
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
       <Reveal>
-        <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
+        <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
           Sample work
         </h2>
         <p className="mt-3 max-w-2xl text-muted">
@@ -23,7 +23,7 @@ export default function ServiceGallery({ service }: { service: Service }) {
         {items.map((src, i) => (
           <Reveal key={src ?? i} delay={i * 0.05}>
             {src ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
                 <Image
                   src={src}
                   alt={`${service.label} sample ${i + 1}`}
@@ -33,7 +33,7 @@ export default function ServiceGallery({ service }: { service: Service }) {
                 />
               </div>
             ) : (
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-surface via-base to-surface" />
+              <div className="dot-pattern aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-tint-butter" />
             )}
           </Reveal>
         ))}

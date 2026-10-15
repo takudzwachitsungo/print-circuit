@@ -1,15 +1,14 @@
 import { test, expect } from "@playwright/test";
 
-test("services grid shows all five services linking to detail pages", async ({
-  page,
-}) => {
+test("shop-by-category cards link to filtered shop", async ({ page }) => {
   await page.goto("/");
-  // Scope to the services region so footer service links don't collide.
-  const services = page.getByRole("region", { name: "Our services" });
-  await expect(
-    services.getByRole("link", { name: /Graphic Design & Branding/ }),
-  ).toHaveAttribute("href", "/services/graphic-design-branding");
-  await expect(
-    services.getByRole("link", { name: /Web Development/ }),
-  ).toHaveAttribute("href", "/services/web-development");
+  const section = page.getByRole("region", { name: "Shop by category" });
+  await expect(section.getByRole("link", { name: /Graphic Design & Branding/ })).toHaveAttribute(
+    "href",
+    "/shop?cat=graphic-design-branding",
+  );
+  await expect(section.getByRole("link", { name: /Web Development/ })).toHaveAttribute(
+    "href",
+    "/shop?cat=web-development",
+  );
 });

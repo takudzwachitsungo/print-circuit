@@ -5,6 +5,7 @@ const cases: [string, string][] = [
   // slash) — the correct homepage canonical.
   ["/", "https://www.printcircuit.co.zw"],
   ["/services", "https://www.printcircuit.co.zw/services"],
+  ["/shop", "https://www.printcircuit.co.zw/shop"],
   ["/services/printing", "https://www.printcircuit.co.zw/services/printing"],
   ["/work", "https://www.printcircuit.co.zw/work"],
   ["/about", "https://www.printcircuit.co.zw/about"],

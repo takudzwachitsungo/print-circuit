@@ -12,18 +12,18 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="mx-auto max-w-7xl px-6 pb-24 pt-32">
-      <p className="font-display text-sm uppercase tracking-[0.2em] text-cyan">
+    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6">
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
         Contact
       </p>
-      <h1 className="mt-4 font-display text-4xl font-bold text-primary sm:text-6xl">
+      <h1 className="mt-2 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
         Get a quote
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted">
+      <p className="mt-4 max-w-2xl text-muted">
         Tell us about your project and we&rsquo;ll get you a quote — usually the
         same day.
       </p>
-      <div className="mt-12 grid gap-12 lg:grid-cols-2">
+      <div className="mt-10 grid items-start gap-6 lg:grid-cols-[1.2fr_1fr]">
         <QuoteForm />
         <ContactInfo />
       </div>

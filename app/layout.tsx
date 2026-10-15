@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import FloatingButtons from "@/components/ui/FloatingButtons";
+import BasketProvider from "@/components/shop/BasketProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -45,12 +46,14 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-base text-primary font-body antialiased">
         <JsonLd />
-        <SmoothScroll>
-          <Navbar />
-          {children}
-          <Footer />
-        </SmoothScroll>
-        <FloatingButtons />
+        <BasketProvider>
+          <SmoothScroll>
+            <Navbar />
+            {children}
+            <Footer />
+          </SmoothScroll>
+          <FloatingButtons />
+        </BasketProvider>
         <Analytics />
         <SpeedInsights />
       </body>

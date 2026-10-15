@@ -1,8 +1,13 @@
 import { test, expect } from "@playwright/test";
 
-test("service detail shows what's included and a sample gallery", async ({ page }) => {
+test("service page lists its products and sample work", async ({ page }) => {
   await page.goto("/services/printing");
-  await expect(page.getByText("What's included")).toBeVisible();
-  await expect(page.getByText("Business cards")).toBeVisible();
-  await expect(page.getByText("Sample work")).toBeVisible();
+  const main = page.locator("main");
+  await expect(main.getByRole("heading", { name: "What's included" })).toBeVisible();
+  await expect(main.getByRole("article", { name: "Business Cards" })).toBeVisible();
+  await expect(main.getByRole("link", { name: "Browse Printing products" })).toHaveAttribute(
+    "href",
+    "/shop?cat=printing",
+  );
+  await expect(main.getByText("Sample work")).toBeVisible();
 });

@@ -1,9 +1,9 @@
 # Showcase image credits
 
-Images in this folder fill the "what we print" marquee on the home page
-(`components/home/Marquee.tsx` via `lib/showcase.ts`). They are free-licensed
-stock **placeholders** — replace any file with a real Print Circuit job photo
-(keep the filename and a ~640×400 / 16:10 crop) to make the band ours.
+Images in this folder are used as product photos in the shop
+(`lib/products.ts`, the `image` field). They are free-licensed stock
+**placeholders** — replace any file with a real Print Circuit job photo (keep
+the filename) to make it ours.
 
 All sourced from [Pexels](https://www.pexels.com/license/) — free for
 commercial use, no attribution required. Recorded here for provenance.

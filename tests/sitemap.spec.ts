@@ -7,6 +7,8 @@ test("sitemap lists all routes as absolute URLs", async ({ request }) => {
   for (const path of [
     "",
     "/services",
+    "/shop",
+    "/shop/business-cards",
     "/services/printing",
     "/work",
     "/work/uz-event-flyer",

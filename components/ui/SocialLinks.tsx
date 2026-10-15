@@ -46,12 +46,19 @@ const CHANNELS = [
 export default function SocialLinks({
   className = "",
   variant = "default",
+  tone = "light",
 }: {
   className?: string;
   /** "default" = bordered pill buttons (footer/menu); "compact" = borderless icons (top bar). */
   variant?: "default" | "compact";
+  /** "dark" for the ink footer background. */
+  tone?: "light" | "dark";
 }) {
   const compact = variant === "compact";
+  const pill =
+    tone === "dark"
+      ? "flex h-10 w-10 items-center justify-center rounded-full border border-surface/20 text-surface/80 transition-colors hover:border-surface hover:text-surface"
+      : "flex h-10 w-10 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-magenta";
   return (
     <ul className={`flex items-center ${compact ? "gap-2" : "gap-3"} ${className}`}>
       {CHANNELS.map(({ label, href, Icon }) => (
@@ -63,8 +70,8 @@ export default function SocialLinks({
             aria-label={`Print Circuit on ${label}`}
             className={
               compact
-                ? "flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-cyan"
-                : "flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-muted transition-colors hover:border-cyan hover:text-cyan"
+                ? "flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-magenta"
+                : pill
             }
           >
             <Icon className={compact ? "h-4 w-4" : "h-5 w-5"} />

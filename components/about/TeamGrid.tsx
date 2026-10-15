@@ -5,13 +5,13 @@ import { getTeamPhoto } from "@/lib/gallery";
 
 export default function TeamGrid() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
       <Reveal>
-        <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
+        <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
           The team
         </h2>
       </Reveal>
-      <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {TEAM.map((member, i) => {
           const photo = getTeamPhoto(member.photo);
           return (
@@ -19,10 +19,10 @@ export default function TeamGrid() {
             as="li"
             key={member.name}
             delay={i * 0.05}
-            className="h-full rounded-2xl border border-white/10 bg-surface p-6"
+            className="h-full rounded-3xl border border-line bg-surface p-6"
           >
             {photo ? (
-              <div className="relative aspect-square w-20 overflow-hidden rounded-full border border-white/10">
+              <div className="relative aspect-square w-20 overflow-hidden rounded-full border border-line">
                 <Image
                   src={photo}
                   alt={member.name}
@@ -34,13 +34,13 @@ export default function TeamGrid() {
             ) : (
               <div
                 aria-hidden
-                className="aspect-square w-20 overflow-hidden rounded-full bg-gradient-to-br from-cyan/30 via-magenta/30 to-yellow/30"
+                className="dot-pattern aspect-square w-20 overflow-hidden rounded-full bg-tint-pink"
               />
             )}
-            <h3 className="mt-5 font-display text-lg font-bold text-primary">
+            <h3 className="mt-5 font-display text-lg font-medium text-primary">
               {member.name}
             </h3>
-            <p className="mt-1 text-sm text-cyan">{member.role}</p>
+            <p className="mt-1 text-sm text-magenta">{member.role}</p>
             <p className="mt-3 text-sm text-muted">{member.bio}</p>
           </Reveal>
           );
