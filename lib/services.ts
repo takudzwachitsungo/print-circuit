@@ -20,7 +20,15 @@ export interface Service extends ServiceContent {
 /** Literal Tailwind class strings per accent (never build these by concatenation). */
 export const ACCENT: Record<
   Accent,
-  { text: string; border: string; bgSoft: string; gradientFrom: string; groupHoverText: string }
+  {
+    text: string;
+    border: string;
+    bgSoft: string;
+    gradientFrom: string;
+    groupHoverText: string;
+    /** Pastel block background for bento cards. */
+    tint: string;
+  }
 > = {
   cyan: {
     text: "text-cyan",
@@ -28,6 +36,7 @@ export const ACCENT: Record<
     bgSoft: "bg-cyan/10",
     gradientFrom: "from-cyan/30",
     groupHoverText: "group-hover:text-cyan",
+    tint: "bg-tint-cyan",
   },
   magenta: {
     text: "text-magenta",
@@ -35,13 +44,15 @@ export const ACCENT: Record<
     bgSoft: "bg-magenta/10",
     gradientFrom: "from-magenta/30",
     groupHoverText: "group-hover:text-magenta",
+    tint: "bg-tint-pink",
   },
   yellow: {
-    text: "text-yellow",
+    text: "text-ochre",
     border: "border-yellow",
     bgSoft: "bg-yellow/10",
     gradientFrom: "from-yellow/30",
-    groupHoverText: "group-hover:text-yellow",
+    groupHoverText: "group-hover:text-ochre",
+    tint: "bg-tint-butter",
   },
 };
 

@@ -10,5 +10,5 @@ test("about team list has valid ul > li markup", async ({ page }) => {
 
 test("service included list has valid ul > li markup", async ({ page }) => {
   await page.goto("/services/printing");
-  await expect(page.locator("ul > li").first()).toBeVisible();
+  await expect(page.locator("main ul > li").first()).toBeVisible();
 });

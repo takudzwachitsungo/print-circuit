@@ -7,11 +7,11 @@ export default function ServiceFaq({ service }: { service: Service }) {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="mx-auto max-w-3xl px-6 py-20">
-      <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
+    <section className="mx-auto w-full max-w-3xl px-4 py-16 sm:px-6">
+      <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
         Frequently asked questions
       </h2>
-      <div className="mt-10 divide-y divide-white/10 border-y border-white/10">
+      <div className="mt-8 divide-y divide-line rounded-3xl border border-line bg-surface px-6">
         {service.faqs.map((faq, i) => {
           const isOpen = open === i;
           return (
@@ -29,7 +29,7 @@ export default function ServiceFaq({ service }: { service: Service }) {
                 </span>
                 <span
                   aria-hidden
-                  className={`shrink-0 text-cyan transition-transform duration-300 ${
+                  className={`shrink-0 text-magenta transition-transform duration-300 ${
                     isOpen ? "rotate-45" : ""
                   }`}
                 >
