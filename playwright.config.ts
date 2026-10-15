@@ -1,15 +1,23 @@
 import { defineConfig } from "@playwright/test";
 
+// Own port so tests never reuse a developer's `npm run dev` (which has the real
+// SMTP credentials from .env.local loaded).
+const PORT = 3100;
+
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL: `http://localhost:${PORT}`,
   },
   webServer: {
-    command: "npm run dev",
-    url: "http://localhost:3000",
+    command: `npm run dev -- --port ${PORT}`,
+    url: `http://localhost:${PORT}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
+    stdout: "pipe",
+    // Blank SMTP so /api/quote logs submissions instead of emailing them.
+    // Next's env loader won't override a variable that's already set.
+    env: { SMTP_HOST: "", SMTP_USER: "", SMTP_PASS: "", QUOTE_TO: "" },
   },
 });

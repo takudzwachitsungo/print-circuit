@@ -9,8 +9,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Harare-based printing, branding, signage and design for businesses across Zimbabwe.",
     start_url: "/",
     display: "standalone",
-    background_color: "#0A0A0C",
-    theme_color: "#0A0A0C",
+    background_color: "#F7F5F0",
+    theme_color: "#F7F5F0",
     icons: [
       { src: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
       { src: "/logo.png", sizes: "48x48", type: "image/png" },
