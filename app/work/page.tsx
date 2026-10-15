@@ -16,14 +16,14 @@ export default function WorkPage() {
     PROJECTS.map((p) => [p.slug, getCover(p.slug)]),
   );
   return (
-    <main className="mx-auto max-w-7xl px-6 pb-24 pt-32">
-      <p className="font-display text-sm uppercase tracking-[0.2em] text-magenta">
+    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6">
+      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
         Our work
       </p>
-      <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold text-primary sm:text-6xl">
+      <h1 className="mt-2 max-w-3xl font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
         Projects we&rsquo;re proud of.
       </h1>
-      <p className="mt-6 max-w-2xl text-lg text-muted">
+      <p className="mt-4 max-w-2xl text-muted">
         A growing selection of the printing, branding, signage and web work we&rsquo;ve
         delivered. Filter by what you need.
       </p>

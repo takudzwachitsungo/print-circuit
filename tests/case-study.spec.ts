@@ -5,7 +5,7 @@ test("case study renders title, summary and service tags", async ({ page }) => {
   await expect(
     page.getByRole("heading", { level: 1, name: /The Value Store Branding/ }),
   ).toBeVisible();
-  await expect(page.getByText("Logo Design")).toBeVisible();
+  await expect(page.locator("main").getByText("Logo Design")).toBeVisible();
 });
 
 test("unknown project returns a 404", async ({ page }) => {

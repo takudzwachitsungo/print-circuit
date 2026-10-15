@@ -5,7 +5,7 @@ import { PROJECTS, getProject } from "@/lib/projects";
 import { getGalleryImages } from "@/lib/gallery";
 import CaseStudyHero from "@/components/work/CaseStudyHero";
 import CaseStudyGallery from "@/components/work/CaseStudyGallery";
-import MagneticButton from "@/components/ui/MagneticButton";
+import ButtonLink from "@/components/ui/ButtonLink";
 
 export function generateStaticParams() {
   return PROJECTS.map((p) => ({ slug: p.slug }));
@@ -49,19 +49,21 @@ export default async function CaseStudyPage({
       <CaseStudyHero project={project} />
       <CaseStudyGallery project={project} images={galleryImages} />
 
-      <section className="mx-auto max-w-5xl px-6 py-16 text-center">
-        <h2 className="font-display text-3xl font-bold text-primary sm:text-4xl">
-          Like what you see?
-        </h2>
-        <div className="mt-8 flex justify-center">
-          <MagneticButton href="/contact">Start a project</MagneticButton>
+      <section className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6">
+        <div className="rounded-3xl bg-tint-cyan p-10 text-center">
+          <h2 className="font-display text-3xl font-medium text-primary sm:text-4xl">
+            Like what you see?
+          </h2>
+          <div className="mt-8 flex justify-center">
+            <ButtonLink href="/contact">Start a project</ButtonLink>
+          </div>
+          <Link
+            href="/work"
+            className="mt-8 inline-block text-sm text-primary/70 transition-colors hover:text-primary"
+          >
+            ← All work
+          </Link>
         </div>
-        <Link
-          href="/work"
-          className="mt-10 inline-block text-sm text-muted transition-colors hover:text-primary"
-        >
-          ← All work
-        </Link>
       </section>
     </main>
   );

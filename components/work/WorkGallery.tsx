@@ -31,8 +31,8 @@ export default function WorkGallery({
               onClick={() => setFilter(f)}
               className={`rounded-full border px-4 py-2 text-sm transition-colors ${
                 active
-                  ? "border-cyan bg-cyan/10 text-cyan"
-                  : "border-white/15 text-muted hover:border-white/40 hover:text-primary"
+                  ? "border-primary bg-primary text-surface"
+                  : "border-line bg-surface text-primary hover:border-primary"
               }`}
             >
               {f}

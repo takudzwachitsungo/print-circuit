@@ -14,15 +14,15 @@ export default function CaseStudyGallery({
   const items = hasImages ? images : project.gallery;
 
   return (
-    <section className="mx-auto max-w-5xl px-6 py-12">
+    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
       <Reveal>
-        <h2 className="font-display text-2xl font-bold text-primary">Gallery</h2>
+        <h2 className="font-display text-2xl font-medium text-primary">Gallery</h2>
       </Reveal>
       <div className="mt-8 grid gap-6 sm:grid-cols-2">
         {items.map((item, i) => (
           <Reveal key={item} delay={i * 0.05}>
             {hasImages ? (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line">
                 <Image
                   src={item}
                   alt={`${project.title} — image ${i + 1}`}
@@ -32,7 +32,7 @@ export default function CaseStudyGallery({
                 />
               </div>
             ) : (
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-surface via-base to-surface" />
+              <div className="dot-pattern aspect-[4/3] overflow-hidden rounded-3xl border border-line bg-tint-butter" />
             )}
           </Reveal>
         ))}
