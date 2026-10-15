@@ -12,6 +12,8 @@ import {
 import { addItem, removeItem, updateItem, type AddInput, type BasketItem } from "@/lib/basket";
 import { getProduct } from "@/lib/products";
 import { getServerSnapshot, getSnapshot, setBasket, subscribe } from "./basket-store";
+import BasketDrawer from "./BasketDrawer";
+import BasketToast from "./BasketToast";
 
 export interface BasketApi {
   items: BasketItem[];
@@ -77,5 +79,11 @@ export default function BasketProvider({ children }: { children: ReactNode }) {
     [items, isOpen, notice],
   );
 
-  return <BasketContext.Provider value={api}>{children}</BasketContext.Provider>;
+  return (
+    <BasketContext.Provider value={api}>
+      {children}
+      <BasketDrawer />
+      <BasketToast />
+    </BasketContext.Provider>
+  );
 }

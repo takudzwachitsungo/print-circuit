@@ -63,8 +63,8 @@ export default function SocialLinks({
             aria-label={`Print Circuit on ${label}`}
             className={
               compact
-                ? "flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-cyan"
-                : "flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-muted transition-colors hover:border-cyan hover:text-cyan"
+                ? "flex h-8 w-8 items-center justify-center rounded-full text-muted transition-colors hover:text-magenta"
+                : "flex h-10 w-10 items-center justify-center rounded-full border border-line text-muted transition-colors hover:border-primary hover:text-magenta"
             }
           >
             <Icon className={compact ? "h-4 w-4" : "h-5 w-5"} />
