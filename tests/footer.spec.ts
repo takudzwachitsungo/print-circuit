@@ -24,3 +24,11 @@ test("footer links into the shop and categories", async ({ page }) => {
   );
   await expect(footer).toContainText("Printcircuit Enterprises (Private) Limited");
 });
+
+test("footer shows the domain emails, not Gmail", async ({ page }) => {
+  await page.goto("/");
+  const footer = page.getByRole("contentinfo");
+  await expect(footer.getByRole("link", { name: "sales@printcircuit.co.zw" })).toBeVisible();
+  await expect(footer.getByRole("link", { name: "careers@printcircuit.co.zw" })).toBeVisible();
+  await expect(footer).not.toContainText("gmail.com");
+});

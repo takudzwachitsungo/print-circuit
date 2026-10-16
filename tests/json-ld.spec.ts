@@ -12,6 +12,7 @@ test("home page emits a valid LocalBusiness JSON-LD with NAP", async ({ page }) 
   expect(data.name).toBe("Print Circuit");
   expect(data.url).toBe("https://www.printcircuit.co.zw");
   expect(data.telephone).toBe("+263 78 872 3331");
+  expect(data.email).toBe("sales@printcircuit.co.zw");
   expect(data.address.addressLocality).toBe("Harare");
   expect(JSON.stringify(data)).not.toContain("+236");
 });
