@@ -30,6 +30,12 @@ export default function ContactInfo() {
               {SITE.email}
             </a>
           </p>
+          <p>
+            Careers:{" "}
+            <a href={`mailto:${SITE.careersEmail}`} className="hover:text-primary">
+              {SITE.careersEmail}
+            </a>
+          </p>
         </address>
         <ButtonLink href={SITE.whatsapp} variant="whatsapp" external className="mt-4">
           Chat on WhatsApp

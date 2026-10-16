@@ -88,6 +88,12 @@ export default function Footer() {
                 {SITE.email}
               </a>
             </p>
+            <p className="text-sm text-surface/60">
+              Careers:{" "}
+              <a href={`mailto:${SITE.careersEmail}`} className={link}>
+                {SITE.careersEmail}
+              </a>
+            </p>
             <p>
               <a href={SITE.whatsapp} target="_blank" rel="noopener noreferrer" className={link}>
                 Chat on WhatsApp
