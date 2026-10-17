@@ -1,28 +1,8 @@
-# Showcase image credits
+# Showcase images
 
-Images in this folder are used as product photos in the shop
-(`lib/products.ts`, the `image` field). They are free-licensed stock
-**placeholders** — replace any file with a real Print Circuit job photo (keep
-the filename) to make it ours.
+These files feed the homepage scrolling cards and a few shop products
+(`business-cards`, `flyers-brochures`, `brand-identity`, `letterheads`).
 
-All sourced from [Pexels](https://www.pexels.com/license/) — free for
-commercial use, no attribution required. Recorded here for provenance.
-
-| File | Pexels photo ID | Source |
-| --- | --- | --- |
-| `business-cards.jpg` | 4466176 | https://www.pexels.com/photo/4466176/ |
-| `flyers.jpg` | 6114589 | https://www.pexels.com/photo/6114589/ |
-| `large-format-printing.jpg` | 280104 | https://www.pexels.com/photo/280104/ |
-| `banners.jpg` | 7336931 | https://www.pexels.com/photo/7336931/ |
-| `signage.jpg` | 3592657 | https://www.pexels.com/photo/3592657/ |
-| `branding.jpg` | 7661590 | https://www.pexels.com/photo/7661590/ |
-| `stationery.jpg` | 5420979 | https://www.pexels.com/photo/5420979/ |
-| `stickers.jpg` | 30101199 | https://www.pexels.com/photo/30101199/ |
-
-## Weak matches to swap first
-
-Pexels lacked good shots for two items; these are the loosest fits and the best
-candidates to replace with real work:
-
-- **`banners.jpg`** — a decorative event banner, not an advertising roll-up/pull-up banner.
-- **`stickers.jpg`** — street-art stickers, not printed product sticker sheets.
+They were originally Pexels stock placeholders; in commit 3cdbc72 ("pic
+changes") most were replaced with real Print Circuit work. Most shop product
+photos now live in `public/products/<slug>.jpg` instead.

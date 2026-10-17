@@ -103,7 +103,8 @@ print-circuit/
 | --- | --- |
 | `public/work/<project>/` | Photos for each **portfolio project**. The first image (alphabetically) is the **cover**; all images show in that project's gallery. |
 | `public/team/` | **Team headshots** (e.g. `tinotenda.jpg`, `audrey.jpg`). |
-| `public/showcase/` | **Product photos** used in the shop (see Section 7). |
+| `public/products/` | **Product photos** used in the shop, one per product named `<slug>.jpg` (see Section 7). |
+| `public/showcase/` | Photos for the homepage scrolling cards (and a few products). |
 | `public/logo.png` | The **logo** in the top bar and footer. |
 
 > **What's a "slug"?** A slug is the short name in the web address, e.g.
@@ -201,8 +202,8 @@ from **`lib/products.ts`**. Each product looks like this:
 ```
 
 - **Change wording:** edit the text inside the quotes.
-- **Add a photo:** upload it to `public/showcase/` (square photos look best,
-  under ~300 KB), then set `image: "/showcase/your-file.jpg"`.
+- **Add a photo:** upload it to `public/products/` named after the slug (square photos look best,
+  under ~300 KB), then set `image: "/products/<slug>.jpg"`.
 - **Add a product:** copy a whole `{ … },` block, paste it in the right
   category section, and give it a **new, unique slug**.
 - **Remove a product:** delete its whole `{ … },` block. Anyone who had it in
