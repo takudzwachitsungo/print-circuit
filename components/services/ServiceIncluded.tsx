@@ -5,7 +5,7 @@ import { type Service } from "@/lib/services";
 
 export default function ServiceIncluded({ service }: { service: Service }) {
   return (
-    <section aria-labelledby="included-heading" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-labelledby="included-heading" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <SectionHeading
         id="included-heading"
         label="Products"

@@ -4,7 +4,7 @@ import { mostRequested } from "@/lib/products";
 
 export default function MostRequested() {
   return (
-    <section aria-labelledby="popular-heading" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-labelledby="popular-heading" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <SectionHeading
         id="popular-heading"
         label="Products"

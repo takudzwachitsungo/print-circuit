@@ -17,11 +17,11 @@ const link = "text-sm text-surface/80 transition-colors hover:text-surface";
 export default function Footer() {
   return (
     <footer className="mt-auto bg-ink text-surface">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 lg:grid-cols-5">
+      <div className="mx-auto grid max-w-screen-2xl gap-10 px-4 py-16 sm:px-6 lg:px-8 xl:px-10 md:grid-cols-2 lg:grid-cols-5">
         <div>
-          <Link href="/" className="flex items-center gap-2 font-display text-lg font-semibold">
+          <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-semibold">
             <Image src="/logo.png" alt="" width={256} height={240} className="h-12 w-auto rounded-lg bg-surface p-1" />
-            Print Circuit
+            <span>Print <span className="text-magenta">Circuit</span></span>
           </Link>
           <p className="mt-4 text-sm text-surface/70">{SITE.address}</p>
           <dl className="mt-4 space-y-1 text-sm text-surface/70">
@@ -99,7 +99,7 @@ export default function Footer() {
       </div>
 
       <div className="border-t border-surface/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-surface/60 sm:flex-row sm:px-6">
+        <div className="mx-auto flex max-w-screen-2xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-surface/60 sm:flex-row sm:px-6 lg:px-8 xl:px-10">
           <p>
             © {new Date().getFullYear()} {SITE.legalName}. All rights reserved.
           </p>

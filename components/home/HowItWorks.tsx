@@ -7,7 +7,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section aria-label="How it works" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-label="How it works" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <div className="rounded-3xl border border-line bg-surface p-8 sm:p-12">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">How it works</p>
         <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">

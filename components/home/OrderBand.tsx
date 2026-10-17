@@ -7,7 +7,7 @@ import { SITE } from "@/lib/site";
 export default function OrderBand() {
   const { count, open } = useBasket();
   return (
-    <section aria-label="Place an order" className="mx-auto w-full max-w-7xl px-4 pb-20 sm:px-6">
+    <section aria-label="Place an order" className="mx-auto w-full max-w-screen-2xl px-4 pb-20 sm:px-6 lg:px-8 xl:px-10">
       <div className="grid items-center gap-8 rounded-3xl bg-tint-cyan p-8 sm:p-12 lg:grid-cols-2">
         <div>
           <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-5xl">

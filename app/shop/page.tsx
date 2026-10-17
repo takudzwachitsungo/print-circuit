@@ -47,7 +47,7 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
   ];
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6">
+    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 xl:px-10">
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">Shop</p>
       <h1 className="mt-2 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
         {category ? CATEGORY_SHORT[category] : "Shop all"}

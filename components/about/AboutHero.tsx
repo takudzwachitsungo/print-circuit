@@ -1,6 +1,6 @@
 export default function AboutHero() {
   return (
-    <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pt-6 sm:px-6 lg:grid-cols-12">
+    <section className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 pt-6 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-12">
       <div className="relative overflow-hidden rounded-3xl bg-tint-butter p-8 sm:p-12 lg:col-span-8">
         <div aria-hidden className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-magenta/15" />
         <p className="relative text-xs font-medium uppercase tracking-[0.2em] text-primary/60">

@@ -20,7 +20,7 @@ const QUOTES = [
 
 export default function Testimonials() {
   return (
-    <section aria-label="What our clients say" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-label="What our clients say" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">Client words</p>
       <ul className="mt-8 grid gap-4 md:grid-cols-3">
         {QUOTES.map((q) => (

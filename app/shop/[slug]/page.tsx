@@ -40,7 +40,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   const related = relatedProducts(product);
 
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-6 sm:px-6">
+    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-6 sm:px-6 lg:px-8 xl:px-10">
       <nav aria-label="Breadcrumb" className="text-sm text-muted">
         <Link href="/shop" className="hover:text-primary">
           Shop

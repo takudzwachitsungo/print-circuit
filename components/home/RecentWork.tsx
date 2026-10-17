@@ -5,7 +5,7 @@ import { getCover } from "@/lib/gallery";
 
 export default function RecentWork() {
   return (
-    <section aria-labelledby="work-heading" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-labelledby="work-heading" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <SectionHeading
         id="work-heading"
         label="Portfolio"

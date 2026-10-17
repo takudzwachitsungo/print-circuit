@@ -2,7 +2,7 @@ import Reveal from "@/components/animation/Reveal";
 
 export default function StorySection() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <Reveal className="rounded-3xl border border-line bg-surface p-8 sm:p-12">
         <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
           Our story

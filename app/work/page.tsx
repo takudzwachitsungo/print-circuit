@@ -16,7 +16,7 @@ export default function WorkPage() {
     PROJECTS.map((p) => [p.slug, getCover(p.slug)]),
   );
   return (
-    <main className="mx-auto w-full max-w-7xl px-4 pb-20 pt-10 sm:px-6">
+    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 xl:px-10">
       <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
         Our work
       </p>

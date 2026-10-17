@@ -114,11 +114,11 @@ export default function Navbar() {
       </div>
 
       <header className="sticky top-0 z-50 border-b border-line bg-base/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6">
-          <Link href="/" className="flex shrink-0 items-center gap-2 font-display text-lg font-semibold text-primary">
+        <div className="mx-auto flex max-w-screen-2xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8 xl:px-10">
+          <Link href="/" className="flex shrink-0 items-center gap-2.5 font-display text-lg font-bold text-primary transition-opacity hover:opacity-95">
             {/* Decorative — the wordmark beside it carries the name. */}
             <Image src="/logo.png" alt="" width={256} height={240} priority className="h-10 w-auto" />
-            Print Circuit
+            <span>Print <span className="text-magenta">Circuit</span></span>
           </Link>
 
           <SearchForm className="mx-auto hidden w-full max-w-xl md:block" />
@@ -186,7 +186,7 @@ export default function Navbar() {
       </header>
 
       <nav aria-label="Primary" className="hidden border-b border-line md:block">
-        <div className="mx-auto flex max-w-7xl items-center gap-1 px-6 py-2 text-sm">
+        <div className="mx-auto flex max-w-screen-2xl items-center gap-1 px-4 py-2 text-sm sm:px-6 lg:px-8 xl:px-10">
           {LINKS.slice(0, 2).map((l) => (
             <Link key={l.href} href={l.href} className={linkClass(l.href)}>
               {l.label}

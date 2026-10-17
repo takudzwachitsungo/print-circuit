@@ -14,7 +14,7 @@ export default function CaseStudyGallery({
   const items = hasImages ? images : project.gallery;
 
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <Reveal>
         <h2 className="font-display text-2xl font-medium text-primary">Gallery</h2>
       </Reveal>

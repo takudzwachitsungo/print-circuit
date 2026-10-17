@@ -9,7 +9,7 @@ export default function ServiceHero({ service }: { service: Service }) {
   const cover = getServiceSamples(service.slug)[0];
   const short = isCategory(service.slug) ? CATEGORY_SHORT[service.slug] : service.label;
   return (
-    <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pt-6 sm:px-6 lg:grid-cols-12">
+    <section className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 pt-6 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-12">
       <div className={`rounded-3xl p-8 sm:p-12 lg:col-span-7 ${accent.tint}`}>
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/60">Service</p>
         <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">

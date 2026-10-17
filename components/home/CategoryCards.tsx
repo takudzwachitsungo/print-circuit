@@ -8,7 +8,7 @@ const TINTS = ["bg-tint-cyan", "bg-tint-pink", "bg-tint-butter", "bg-tint-cyan",
 
 export default function CategoryCards() {
   return (
-    <section aria-labelledby="categories-heading" className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6">
+    <section aria-labelledby="categories-heading" className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 lg:px-8 xl:px-10">
       <Reveal>
         <div data-testid="reveal-probe">
           <SectionHeading

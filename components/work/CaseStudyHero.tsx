@@ -2,7 +2,7 @@ import { type Project } from "@/lib/projects";
 
 export default function CaseStudyHero({ project }: { project: Project }) {
   return (
-    <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pt-6 sm:px-6 lg:grid-cols-12">
+    <section className="mx-auto grid w-full max-w-screen-2xl gap-4 px-4 pt-6 sm:px-6 lg:px-8 xl:px-10 lg:grid-cols-12">
       <div className="rounded-3xl bg-tint-butter p-8 sm:p-12 lg:col-span-7">
         <p className="text-xs font-medium uppercase tracking-[0.2em] text-primary/60">{project.category}</p>
         <h1 className="mt-4 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
