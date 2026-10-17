@@ -163,6 +163,7 @@ export const PRODUCTS: Product[] = [
     name: "Shopfront Signage",
     category: "signage-advertising",
     blurb: "Fascia boards and shop signs, made and installed.",
+    image: "/products/shopfront-signage.jpg",
   },
   {
     slug: "vehicle-branding",
