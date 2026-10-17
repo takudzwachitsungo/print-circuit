@@ -60,7 +60,7 @@ export const PRODUCTS: Product[] = [
     category: "printing",
     blurb: "Eye-catching posters from A3 up to A0 and beyond, indoor or outdoor.",
     options: ["A3", "A2", "A1", "A0"],
-    image: "/showcase/large-format-printing.jpg",
+    image: "/products/posters-large-format.jpg",
   },
   {
     slug: "vinyl-banners",
@@ -68,7 +68,7 @@ export const PRODUCTS: Product[] = [
     category: "printing",
     blurb: "Weatherproof banners for shopfronts, events and fences, any size.",
     options: ["Eyelets", "Pole pockets"],
-    image: "/showcase/banners.jpg",
+    image: "/products/vinyl-banners.jpg",
     badge: "Fast turnaround",
     featured: true,
   },
@@ -78,6 +78,7 @@ export const PRODUCTS: Product[] = [
     category: "printing",
     blurb: "Programmes, catalogues and training manuals, stapled or bound.",
     options: ["Saddle-stitched", "Perfect bound"],
+    image: "/products/booklets-manuals.jpg",
   },
   {
     slug: "stickers-labels",
@@ -85,8 +86,24 @@ export const PRODUCTS: Product[] = [
     category: "printing",
     blurb: "Product labels and promo stickers, cut to any shape.",
     options: ["Gloss", "Matte", "Die-cut"],
-    image: "/showcase/stickers.jpg",
+    image: "/products/stickers-labels.jpg",
     badge: "New",
+  },
+  {
+    slug: "custom-t-shirts",
+    name: "Custom T-shirts",
+    category: "printing",
+    blurb: "Printed tees for events, teams, uniforms and memorials.",
+    options: ["Event", "Company uniform", "Memorial"],
+    image: "/products/custom-t-shirts.jpg",
+  },
+  {
+    slug: "branded-merchandise",
+    name: "Branded Merchandise",
+    category: "printing",
+    blurb: "Hoodies, caps and drinkware with your logo — for staff, clients and gifts.",
+    options: ["Hoodies", "Caps", "Tumblers & mugs"],
+    image: "/products/branded-merchandise.jpg",
   },
   // ── Graphic design & branding ────────────────────────────
   {
@@ -94,6 +111,7 @@ export const PRODUCTS: Product[] = [
     name: "Logo Design",
     category: "graphic-design-branding",
     blurb: "A distinctive logo with concepts, revisions and print-ready files.",
+    image: "/products/logo-design.jpg",
     badge: "Popular",
   },
   {
@@ -108,18 +126,21 @@ export const PRODUCTS: Product[] = [
     name: "Social Media Kits",
     category: "graphic-design-branding",
     blurb: "Branded post and story templates for your channels.",
+    image: "/products/social-media-kits.jpg",
   },
   {
     slug: "marketing-collateral",
     name: "Marketing Collateral",
     category: "graphic-design-branding",
     blurb: "Designed flyers, brochures and presentations ready for print or screen.",
+    image: "/products/marketing-collateral.jpg",
   },
   {
     slug: "packaging-design",
     name: "Packaging Design",
     category: "graphic-design-branding",
     blurb: "Boxes, bags and labels designed to stand out on the shelf.",
+    image: "/products/packaging-design.jpg",
   },
   {
     slug: "brand-guidelines",
@@ -134,6 +155,7 @@ export const PRODUCTS: Product[] = [
     category: "signage-advertising",
     blurb: "Portable pull-up banners for events, expos and reception areas.",
     options: ["Standard 85 × 200 cm", "Wide 100 × 200 cm"],
+    image: "/products/roll-up-banners.jpg",
     badge: "Popular",
   },
   {
@@ -141,7 +163,6 @@ export const PRODUCTS: Product[] = [
     name: "Shopfront Signage",
     category: "signage-advertising",
     blurb: "Fascia boards and shop signs, made and installed.",
-    image: "/showcase/signage.jpg",
   },
   {
     slug: "vehicle-branding",
@@ -149,24 +170,28 @@ export const PRODUCTS: Product[] = [
     category: "signage-advertising",
     blurb: "Decals and wraps that turn your vehicles into adverts.",
     options: ["Decals", "Partial wrap", "Full wrap"],
+    image: "/products/vehicle-branding.jpg",
   },
   {
     slug: "event-displays",
     name: "Event Displays",
     category: "signage-advertising",
     blurb: "Pop-up walls, backdrops and table covers for events.",
+    image: "/products/event-displays.jpg",
   },
   {
     slug: "billboard-printing",
     name: "Billboard Printing",
     category: "signage-advertising",
     blurb: "Large-format outdoor billboard skins, printed to spec.",
+    image: "/products/billboard-printing.jpg",
   },
   {
     slug: "directional-signs",
     name: "Directional & Safety Signs",
     category: "signage-advertising",
     blurb: "Clear wayfinding and safety signage for offices and sites.",
+    image: "/products/directional-signs.jpg",
   },
   // ── Stationery & supplies ────────────────────────────────
   {
@@ -183,6 +208,7 @@ export const PRODUCTS: Product[] = [
     category: "stationery-supplies",
     blurb: "Numbered, carbonless duplicate or triplicate books.",
     options: ["Duplicate", "Triplicate"],
+    image: "/products/receipt-books.jpg",
     badge: "Popular",
   },
   {
@@ -191,12 +217,14 @@ export const PRODUCTS: Product[] = [
     category: "stationery-supplies",
     blurb: "Notebooks with your logo for staff, clients and events.",
     options: ["A5", "A4"],
+    image: "/products/branded-notebooks.jpg",
   },
   {
     slug: "company-folders",
     name: "Company Folders",
     category: "stationery-supplies",
     blurb: "Presentation folders with pockets for proposals and documents.",
+    image: "/products/company-folders.jpg",
   },
   {
     slug: "envelopes",
@@ -204,12 +232,21 @@ export const PRODUCTS: Product[] = [
     category: "stationery-supplies",
     blurb: "Printed envelopes in standard sizes.",
     options: ["DL", "C5", "C4"],
+    image: "/products/envelopes.jpg",
+  },
+  {
+    slug: "certificates",
+    name: "Certificates",
+    category: "stationery-supplies",
+    blurb: "Award and training certificates, designed and printed on premium card.",
+    image: "/products/certificates.jpg",
   },
   {
     slug: "office-printing",
     name: "Office Printing Supplies",
     category: "stationery-supplies",
     blurb: "Everyday office printing and supplies, sorted in one order.",
+    image: "/products/office-printing.jpg",
   },
   // ── Web development ──────────────────────────────────────
   {
@@ -217,6 +254,7 @@ export const PRODUCTS: Product[] = [
     name: "Business Websites",
     category: "web-development",
     blurb: "A fast, mobile-first website that shows customers who you are.",
+    image: "/products/business-websites.jpg",
     badge: "Popular",
   },
   {
@@ -242,6 +280,7 @@ export const PRODUCTS: Product[] = [
     name: "Hosting & Domains",
     category: "web-development",
     blurb: "Domain registration, hosting and business email set-up.",
+    image: "/products/hosting-domains.jpg",
   },
   {
     slug: "website-maintenance",
