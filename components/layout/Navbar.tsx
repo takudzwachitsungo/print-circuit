@@ -65,13 +65,17 @@ function BasketButton() {
   );
 }
 
-function CategoriesMenu() {
+function CategoriesMenu({ isActive = false }: { isActive?: boolean }) {
   return (
     <div className="group relative">
       <button
         type="button"
         aria-haspopup="true"
-        className="rounded-lg px-3 py-1.5 text-muted transition-colors hover:text-primary group-focus-within:text-primary"
+        className={`rounded-lg px-3 py-1.5 font-medium transition-colors ${
+          isActive
+            ? "bg-tint-pink text-magenta font-semibold"
+            : "text-muted hover:text-primary group-focus-within:text-primary"
+        }`}
       >
         Categories ▾
       </button>
@@ -100,8 +104,8 @@ export default function Navbar() {
   const [searchOpen, setSearchOpen] = useState(false);
   const isActive = (href: string) => (href === "/" ? pathname === "/" : pathname.startsWith(href));
   const linkClass = (href: string) =>
-    `rounded-lg px-3 py-1.5 transition-colors ${
-      isActive(href) ? "bg-line text-primary" : "text-muted hover:text-primary"
+    `rounded-lg px-3 py-1.5 font-medium transition-colors ${
+      isActive(href) ? "bg-tint-pink text-magenta font-semibold" : "text-muted hover:text-primary"
     }`;
 
   return (
@@ -192,7 +196,7 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <CategoriesMenu />
+          <CategoriesMenu isActive={pathname.includes("cat=")} />
           {LINKS.slice(2).map((l) => (
             <Link key={l.href} href={l.href} className={linkClass(l.href)}>
               {l.label}
