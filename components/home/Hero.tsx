@@ -74,25 +74,14 @@ export default function Hero() {
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1.5px,transparent_1.5px)] bg-[size:22px_22px] opacity-70"
       />
 
-      {/* ── Prominent Edge-to-Edge "PRINT CIRCUIT" Typography Watermark ── */}
+      {/* ── Subtle Background Watermark ── */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 flex select-none items-center justify-center overflow-hidden"
       >
-        <div className="flex flex-col items-center justify-center">
-          <span
-            className="whitespace-nowrap font-display text-[17vw] font-black uppercase leading-none tracking-[-0.04em] text-white/[0.04]"
-            style={{
-              WebkitTextStroke: "1px rgba(236, 0, 140, 0.18)",
-              textShadow: "0 0 70px rgba(236, 0, 140, 0.12)",
-            }}
-          >
-            PRINT CIRCUIT
-          </span>
-          <span className="mt-2 hidden text-xs font-semibold uppercase tracking-[0.55em] text-magenta/30 sm:block">
-            Harare · Commercial Print &amp; Brand Studio
-          </span>
-        </div>
+        <span className="whitespace-nowrap font-display text-3xl font-extrabold uppercase tracking-[0.2em] text-white/[0.025] sm:text-5xl sm:tracking-[0.25em] lg:text-6xl">
+          PRINT CIRCUIT
+        </span>
       </div>
 
       {/* ── Expanded Responsive Content Container (Balanced padding across breakpoints) ── */}
