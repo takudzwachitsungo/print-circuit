@@ -287,6 +287,7 @@ export const PRODUCTS: Product[] = [
     name: "Maintenance & Support",
     category: "web-development",
     blurb: "Updates, backups and fixes so your site keeps running.",
+    image: "/products/website-maintenance.jpg",
   },
 ];
 
