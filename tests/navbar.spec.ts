@@ -3,7 +3,7 @@ import { test, expect } from "@playwright/test";
 test("header shows brand, search and quote basket", async ({ page }) => {
   await page.goto("/");
   const header = page.getByRole("banner");
-  await expect(header.getByRole("link", { name: "Print Circuit" })).toBeVisible();
+  await expect(header.getByRole("link", { name: /print circuit/i })).toBeVisible();
   await expect(header.getByRole("searchbox", { name: "Search products" })).toBeVisible();
   await expect(header.getByRole("button", { name: "Quote basket, 0 items" })).toBeVisible();
 });

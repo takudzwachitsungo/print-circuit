@@ -122,7 +122,7 @@ export default function Navbar() {
           <Link href="/" className="flex shrink-0 items-center gap-2.5 font-display text-lg font-bold text-primary transition-opacity hover:opacity-95">
             {/* Decorative — the wordmark beside it carries the name. */}
             <Image src="/logo.png" alt="" width={256} height={240} priority className="h-10 w-auto" />
-            <span>Print <span className="text-magenta">Circuit</span></span>
+            <span>PRINT <span className="text-magenta">CIRCUIT</span></span>
           </Link>
 
           <SearchForm className="mx-auto hidden w-full max-w-xl md:block" />

@@ -21,7 +21,7 @@ export default function Footer() {
         <div>
           <Link href="/" className="flex items-center gap-2.5 font-display text-lg font-semibold">
             <Image src="/logo.png" alt="" width={256} height={240} className="h-12 w-auto rounded-lg bg-surface p-1" />
-            <span>Print <span className="text-magenta">Circuit</span></span>
+            <span>PRINT <span className="text-magenta">CIRCUIT</span></span>
           </Link>
           <p className="mt-4 text-sm text-surface/70">{SITE.address}</p>
           <dl className="mt-4 space-y-1 text-sm text-surface/70">
