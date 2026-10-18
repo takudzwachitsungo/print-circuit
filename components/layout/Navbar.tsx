@@ -111,7 +111,6 @@ export default function Navbar() {
   return (
     <>
       <div className="bg-ink px-4 py-2 text-center text-xs text-surface">
-        <span className="font-script text-pink-300 text-sm mr-2 font-normal">Need fast turnaround?</span>
         Print Circuit, Harare ·{" "}
         <Link href="/shop" className="font-medium underline underline-offset-2">
           Get a quote in minutes →

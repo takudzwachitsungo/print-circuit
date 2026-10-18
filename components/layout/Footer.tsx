@@ -23,10 +23,7 @@ export default function Footer() {
             <Image src="/logo.png" alt="" width={256} height={240} className="h-12 w-auto rounded-lg bg-surface p-1" />
             <span>PRINT <span className="text-magenta">CIRCUIT</span></span>
           </Link>
-          <p className="mt-2 font-script text-base text-pink-300">
-            Crafted with precision &amp; care in Zimbabwe ✨
-          </p>
-          <p className="mt-3 text-sm text-surface/70">{SITE.address}</p>
+          <p className="mt-4 text-sm text-surface/70">{SITE.address}</p>
           <dl className="mt-4 space-y-1 text-sm text-surface/70">
             {SITE.hours.map((h) => (
               <div key={h.days} className="flex gap-2">

@@ -24,7 +24,6 @@
 @theme inline {
   --font-display: var(--font-poppins);
   --font-body: var(--font-poppins);
-  --font-script: var(--font-shadows);
 }
 
 /* Raw CSS variables for gradients / animation values */
