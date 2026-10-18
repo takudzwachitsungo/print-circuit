@@ -176,7 +176,9 @@ export default function Hero() {
                 Harare Studio · Avondale
               </p>
               <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
-                Bringing Your Ideas to{" "}
+                Bringing Your Ideas
+                <br />
+                to{" "}
                 <span className="bg-gradient-to-r from-pink-300 via-magenta to-pink-200 bg-clip-text text-transparent">
                   Print
                 </span>
