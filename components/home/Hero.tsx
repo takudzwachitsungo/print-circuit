@@ -52,12 +52,12 @@ export default function Hero() {
   return (
     <section
       aria-label="Introduction"
-      className="relative w-full overflow-hidden bg-gradient-to-b from-[#1c0316] via-[#12020e] to-[#0a0208] text-white shadow-2xl"
+      className="relative w-full overflow-hidden bg-gradient-to-b from-[#0a0208] from-0% via-[#1c0316] via-15% to-[#0a0208] text-white shadow-2xl"
     >
       {/* ── Ambient Radial Glows matching Dominant Logo Magenta (#ec008c) ── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-40 left-1/2 h-[560px] w-[950px] -translate-x-1/2 rounded-full bg-magenta/30 blur-[135px]"
+        className="pointer-events-none absolute top-6 sm:top-10 left-1/2 h-[560px] w-[950px] -translate-x-1/2 rounded-full bg-magenta/30 blur-[135px]"
       />
       <div
         aria-hidden
@@ -71,7 +71,7 @@ export default function Hero() {
       {/* ── Dynamic Rotating Ambient Aura (inspired by onegrafix rotating light movement) ── */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen opacity-75"
+        className="pointer-events-none absolute inset-0 top-6 sm:top-10 overflow-hidden mix-blend-screen opacity-75"
       >
         <svg
           viewBox="0 0 100 100"
@@ -173,9 +173,9 @@ export default function Hero() {
           <div className="flex flex-col justify-between lg:col-span-7">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
-                Harare, Zimbabwe · Serving You Online
+                Harare, Zimbabwe
               </p>
-              <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
+              <h1 className="mt-4 sm:mt-5 max-w-2xl font-display text-4xl font-bold leading-[1.18] tracking-tight text-white sm:text-6xl sm:leading-[1.16] lg:text-6.5xl">
                 Bringing Your Ideas
                 <br />
                 to{" "}
@@ -184,7 +184,7 @@ export default function Hero() {
                 </span>
                 .
               </h1>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
+              <p className="mt-6 sm:mt-7 max-w-xl text-base leading-loose text-white/75 sm:text-lg sm:leading-[1.85]">
                 Professional printing, graphic design, branding, stationery supplies and web development
                 solutions that help your business stand out.
               </p>
