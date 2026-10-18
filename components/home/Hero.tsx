@@ -17,9 +17,14 @@ function FeatureCard({ product }: { product: Product }) {
       />
       <div className="relative flex min-w-0 flex-1 flex-col">
         {product.badge && (
-          <span className="self-start rounded-full border border-magenta/40 bg-magenta/20 px-3 py-1 text-xs font-semibold tracking-wide text-pink-200">
-            {product.badge}
-          </span>
+          <div className="flex items-center gap-2">
+            <span className="self-start rounded-full border border-magenta/40 bg-magenta/20 px-3 py-1 text-xs font-semibold tracking-wide text-pink-200">
+              {product.badge}
+            </span>
+            <span className="font-script text-sm text-pink-300/85">
+              popular choice
+            </span>
+          </div>
         )}
         <h2 id={titleId} className="mt-3 font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
           {product.name}
@@ -107,9 +112,14 @@ export default function Hero() {
           {/* Left Column: Heading, Pitch & CTAs */}
           <div className="flex flex-col justify-between lg:col-span-7">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-300/70">
-                Harare Studio · Avondale
-              </p>
+              <div className="flex flex-wrap items-center gap-2.5">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-300/70">
+                  Harare Studio · Avondale
+                </p>
+                <span className="font-script text-base text-pink-300 sm:text-lg -rotate-2">
+                  ✦ custom print &amp; brand studio
+                </span>
+              </div>
               <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
                 Print that makes your brand{" "}
                 <span className="bg-gradient-to-r from-pink-300 via-magenta to-pink-200 bg-clip-text text-transparent">
@@ -135,6 +145,9 @@ export default function Hero() {
                 >
                   Get a quote
                 </Link>
+                <span className="font-script text-sm sm:text-base text-pink-200/80 -rotate-1 pl-1">
+                  Same-day quote response ⚡
+                </span>
               </div>
             </div>
 

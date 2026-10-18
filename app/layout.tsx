@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { display, body } from "./fonts";
+import { display, body, script } from "./fonts";
 import { SITE } from "@/lib/site";
 import JsonLd from "@/components/seo/JsonLd";
 import SmoothScroll from "@/components/providers/SmoothScroll";
@@ -42,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${display.variable} ${body.variable} h-full`}
+      className={`${display.variable} ${body.variable} ${script.variable} h-full`}
     >
       <body className="min-h-full flex flex-col bg-base text-primary font-body antialiased">
         <JsonLd />

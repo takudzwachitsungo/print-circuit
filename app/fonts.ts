@@ -1,15 +1,21 @@
-import { Space_Grotesk, Inter } from "next/font/google";
+import { Poppins, Shadows_Into_Light } from "next/font/google";
 
-// Display / headings — bold geometric grotesk
-export const display = Space_Grotesk({
+// Primary geometric typography — dominant font on onegrafix.co.zw
+export const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-poppins",
   display: "swap",
 });
 
-// Body — clean, highly legible
-export const body = Inter({
+// Creative handwritten script accent — creative alt font on onegrafix.co.zw
+export const script = Shadows_Into_Light({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: "400",
+  variable: "--font-shadows",
   display: "swap",
 });
+
+export const display = poppins;
+export const body = poppins;
+
