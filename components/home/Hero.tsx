@@ -107,7 +107,7 @@ export default function Hero() {
           {/* Left Column: Heading, Pitch & CTAs */}
           <div className="flex flex-col justify-between lg:col-span-7">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-300/70">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
                 Harare Studio · Avondale
               </p>
               <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
