@@ -68,6 +68,71 @@ export default function Hero() {
         className="pointer-events-none absolute -bottom-36 -right-20 h-96 w-96 rounded-full bg-yellow/10 blur-[120px]"
       />
 
+      {/* ── Dynamic Rotating Ambient Aura (inspired by onegrafix rotating light movement) ── */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 overflow-hidden mix-blend-screen opacity-75"
+      >
+        <svg
+          viewBox="0 0 100 100"
+          preserveAspectRatio="xMidYMid slice"
+          className="h-full w-full"
+        >
+          <defs>
+            <radialGradient id="heroRotatingGradient1" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+              <animate attributeName="fx" dur="24s" values="35%;65%;35%" repeatCount="indefinite" />
+              <stop offset="0%" stopColor="#ec008c" stopOpacity="0.5" />
+              <stop offset="45%" stopColor="#ec008c" stopOpacity="0.2" />
+              <stop offset="100%" stopColor="#ec008c" stopOpacity="0" />
+            </radialGradient>
+            <radialGradient id="heroRotatingGradient2" cx="50%" cy="50%" fx="50%" fy="50%" r="50%">
+              <animate attributeName="fy" dur="20s" values="40%;60%;40%" repeatCount="indefinite" />
+              <stop offset="0%" stopColor="#00aeef" stopOpacity="0.22" />
+              <stop offset="50%" stopColor="#00aeef" stopOpacity="0.07" />
+              <stop offset="100%" stopColor="#00aeef" stopOpacity="0" />
+            </radialGradient>
+          </defs>
+          {/* Primary Magenta Rotating Ambient Aura */}
+          <rect
+            x="10%"
+            y="5%"
+            width="90%"
+            height="90%"
+            fill="url(#heroRotatingGradient1)"
+          >
+            <animate attributeName="x" dur="18s" values="20%;-5%;20%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="22s" values="-5%;20%;-5%" repeatCount="indefinite" />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="0 50 50"
+              to="360 50 50"
+              dur="9s"
+              repeatCount="indefinite"
+            />
+          </rect>
+          {/* Secondary Counter-Rotating Tint Aura */}
+          <rect
+            x="-10%"
+            y="-5%"
+            width="85%"
+            height="85%"
+            fill="url(#heroRotatingGradient2)"
+          >
+            <animate attributeName="x" dur="25s" values="-10%;15%;-10%" repeatCount="indefinite" />
+            <animate attributeName="y" dur="19s" values="15%;-10%;15%" repeatCount="indefinite" />
+            <animateTransform
+              attributeName="transform"
+              type="rotate"
+              from="360 50 50"
+              to="0 50 50"
+              dur="14s"
+              repeatCount="indefinite"
+            />
+          </rect>
+        </svg>
+      </div>
+
       {/* ── Tactile Halftone Print Mesh Overlay ── */}
       <div
         aria-hidden
