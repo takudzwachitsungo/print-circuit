@@ -151,10 +151,10 @@ export default function Hero() {
 
       {/* ── Expanded Responsive Content Container (Balanced padding across breakpoints) ── */}
       <div className="relative z-10 mx-auto w-full max-w-screen-2xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20 xl:px-10">
-        {/* Studio Categories / Quick Tabs below Navbar */}
+        {/* Our Services / Quick Tabs below Navbar */}
         <div className="mb-8 flex flex-wrap items-center gap-2">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-pink-300/70 mr-1">
-            Studio Categories ·
+            Our Services ·
           </span>
           {SITE.services.map((s) => (
             <Link
@@ -173,7 +173,7 @@ export default function Hero() {
           <div className="flex flex-col justify-between lg:col-span-7">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
-                Harare Studio · Avondale
+                Harare, Zimbabwe · Serving You Online
               </p>
               <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
                 Bringing Your Ideas
