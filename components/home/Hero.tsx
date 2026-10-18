@@ -176,29 +176,29 @@ export default function Hero() {
                 Harare Studio · Avondale
               </p>
               <h1 className="mt-4 max-w-2xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-6.5xl">
-                Print that makes your brand{" "}
+                Bringing Your Ideas to{" "}
                 <span className="bg-gradient-to-r from-pink-300 via-magenta to-pink-200 bg-clip-text text-transparent">
-                  look established
+                  Print
                 </span>
                 .
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-                Business cards, banners, signage, stationery and websites — pick what you need and get
-                a quote the same day.
+                Professional printing, graphic design, branding, stationery supplies and web development
+                solutions that help your business stand out.
               </p>
 
               <div className="mt-8 flex flex-wrap items-center gap-3.5">
                 <Link
-                  href="/shop"
+                  href="/contact"
                   className="inline-flex items-center justify-center rounded-xl bg-magenta px-6 py-3.5 text-sm font-semibold text-white shadow-xl shadow-magenta/25 transition-all hover:bg-magenta/90 hover:shadow-2xl hover:-translate-y-0.5"
                 >
-                  Browse products
+                  Get a Quote
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="inline-flex items-center justify-center rounded-xl border border-white/25 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition-all hover:border-white/50 hover:bg-white/15"
                 >
-                  Get a quote
+                  Explore Our Services
                 </Link>
               </div>
             </div>
