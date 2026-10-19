@@ -63,12 +63,18 @@ export default function WhatWeDoHero() {
             return (
               <article
                 key={s.slug}
-                className="group relative flex h-[290px] sm:h-[305px] flex-col justify-between overflow-hidden rounded-2xl border border-black/15 bg-gradient-to-b from-[#1e0a1c] via-[#150413] to-[#0c020a] p-4 sm:p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-magenta/60 hover:shadow-[0_0_25px_rgba(236,0,140,0.3)]"
+                className="group relative flex h-[290px] sm:h-[305px] flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-b from-[#0a0208] from-0% via-[#1c0316] via-15% to-[#0a0208] p-4 sm:p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-magenta/60 hover:shadow-[0_0_25px_rgba(236,0,140,0.35)]"
               >
-                {/* Ambient Card Backlight in Brand Magenta */}
+                {/* Ambient Radial Glow matching Homepage Hero Magenta (#ec008c) */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-magenta/25 blur-2xl transition group-hover:bg-magenta/40"
+                  className="pointer-events-none absolute -top-10 left-1/2 h-32 w-44 -translate-x-1/2 rounded-full bg-magenta/30 blur-2xl transition group-hover:bg-magenta/45"
+                />
+
+                {/* Tactile Halftone Mesh inside Card */}
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.08)_1.5px,transparent_1.5px)] bg-[size:18px_18px] opacity-60"
                 />
 
                 {/* Top: Large Bold Number + Accent Bar */}
