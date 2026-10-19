@@ -43,10 +43,7 @@ export default function WhatWeDoHero() {
       <div className="relative mx-auto w-full max-w-screen-2xl px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-12 lg:px-8 lg:pt-8 lg:pb-12 xl:px-10">
         {/* Header: What We Do */}
         <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-magenta">
-            Print Circuit · Services
-          </p>
-          <h1 className="mt-1 font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
             What We Do
           </h1>
           <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted sm:text-sm">
