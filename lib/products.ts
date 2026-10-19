@@ -147,6 +147,7 @@ export const PRODUCTS: Product[] = [
     name: "Brand Guidelines",
     category: "graphic-design-branding",
     blurb: "A simple guide so everyone uses your brand consistently.",
+    image: "/products/brand-guidelines.jpg",
   },
   // ── Signage & advertising ────────────────────────────────
   {
@@ -163,6 +164,7 @@ export const PRODUCTS: Product[] = [
     name: "Shopfront Signage",
     category: "signage-advertising",
     blurb: "Fascia boards and shop signs, made and installed.",
+    image: "/products/shopfront-signage.jpg",
   },
   {
     slug: "vehicle-branding",
@@ -262,18 +264,21 @@ export const PRODUCTS: Product[] = [
     name: "Landing Pages",
     category: "web-development",
     blurb: "A focused single page for a campaign, product or event.",
+    image: "/products/landing-pages.jpg",
   },
   {
     slug: "ecommerce-stores",
     name: "E-commerce Stores",
     category: "web-development",
     blurb: "An online store to show products and take orders.",
+    image: "/products/ecommerce-stores.jpg",
   },
   {
     slug: "website-redesigns",
     name: "Website Redesigns",
     category: "web-development",
     blurb: "Refresh an outdated site with a modern look and better speed.",
+    image: "/products/website-redesigns.jpg",
   },
   {
     slug: "hosting-domains",
