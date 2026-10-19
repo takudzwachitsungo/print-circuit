@@ -25,25 +25,10 @@ export default function AboutMissionVisionValues() {
           <div className="mx-auto mt-3 h-1 w-16 rounded-full bg-white/70" />
         </div>
 
-        {/* 3 Columns: Vision, Mission, Values with vertical divider lines */}
+        {/* 3 Columns: Mission, Vision, Values with vertical divider lines */}
         <div className="relative grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-0 lg:divide-x lg:divide-white/25">
-          {/* Column 1: Our Vision */}
+          {/* Column 1: Our Mission */}
           <div className="flex flex-col lg:pr-10">
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/80">
-                Our
-              </span>
-            </div>
-            <h3 className="mt-1 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
-              Vision
-            </h3>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95 font-medium">
-              To be the preferred fully fledged design and print solutions company in Zimbabwe and beyond.
-            </p>
-          </div>
-
-          {/* Column 2: Our Mission */}
-          <div className="flex flex-col lg:px-10 border-t border-white/20 pt-8 lg:border-t-0 lg:pt-0">
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/80">
                 Our
@@ -53,7 +38,22 @@ export default function AboutMissionVisionValues() {
               Mission
             </h3>
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95 font-medium">
-              To profitably meet the needs of our clients by providing creative and innovative solutions.
+              To empower businesses and individuals with high-quality and innovative printing, branding, and marketing solutions that enhance their visibility and success.
+            </p>
+          </div>
+
+          {/* Column 2: Our Vision */}
+          <div className="flex flex-col lg:px-10 border-t border-white/20 pt-8 lg:border-t-0 lg:pt-0">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-[0.25em] text-white/80">
+                Our
+              </span>
+            </div>
+            <h3 className="mt-1 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
+              Vision
+            </h3>
+            <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95 font-medium">
+              To become a leading provider of innovative printing, branding, and marketing solutions in Zimbabwe and beyond, renowned for excellence, creativity, and exceptional customer service.
             </p>
           </div>
 
@@ -67,10 +67,14 @@ export default function AboutMissionVisionValues() {
             <h3 className="mt-1 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
               Values
             </h3>
-            <ul className="mt-4 space-y-2.5 text-sm sm:text-base text-white/95 font-medium">
+            <ul className="mt-4 space-y-2 text-sm sm:text-base text-white/95 font-medium">
               <li className="flex items-center gap-2.5">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
-                <span>Commitment</span>
+                <span>Quality</span>
+              </li>
+              <li className="flex items-center gap-2.5">
+                <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
+                <span>Innovation</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -78,15 +82,15 @@ export default function AboutMissionVisionValues() {
               </li>
               <li className="flex items-center gap-2.5">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
-                <span>Excellence</span>
+                <span>Customer Focus</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
-                <span>Family</span>
+                <span>Reliability</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-white" />
-                <span>Professionalism</span>
+                <span>Teamwork</span>
               </li>
             </ul>
           </div>

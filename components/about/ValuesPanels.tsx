@@ -3,15 +3,15 @@ import Reveal from "@/components/animation/Reveal";
 const PANELS: { title: string; body: string }[] = [
   {
     title: "Mission",
-    body: "To help businesses and individuals improve performance and productivity through high-quality, reliable, and creative printing and branding solutions.",
+    body: "To empower businesses and individuals with high-quality and innovative printing, branding, and marketing solutions that enhance their visibility and success.",
   },
   {
     title: "Vision",
-    body: "To become a trusted leading printing and branding company in Zimbabwe, known for quality, innovation, and excellent customer service.",
+    body: "To become a leading provider of innovative printing, branding, and marketing solutions in Zimbabwe and beyond, renowned for excellence, creativity, and exceptional customer service.",
   },
   {
     title: "Values",
-    body: "Quality, innovation, integrity, reliability, and customer focus.",
+    body: "Quality, innovation, integrity, customer focus, reliability, and teamwork.",
   },
 ];
 
