@@ -1,28 +1,38 @@
 import type { Metadata } from "next";
-import ServicesList from "@/components/services/ServicesList";
+import WhatWeDoHero from "@/components/services/WhatWeDoHero";
+import ServicesDetailedList from "@/components/services/ServicesDetailedList";
+import ServicesFaqSection from "@/components/services/ServicesFaqSection";
+import OrderBand from "@/components/home/OrderBand";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "What We Do · Services",
   description:
-    "Printing, graphic design & branding, signage, stationery and web development — everything Print Circuit offers, in one place.",
+    "Printing, graphic design & branding, signage, stationery supplies and web development — everything Print Circuit offers, in one place.",
   alternates: { canonical: "/services" },
-  openGraph: { url: "/services" },
+  openGraph: {
+    title: "What We Do · Print Circuit Services",
+    description:
+      "Printing, graphic design & branding, signage, stationery supplies and web development — five specialised service lines, one team in Harare.",
+    url: "/services",
+  },
 };
 
 export default function ServicesPage() {
   return (
-    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 xl:px-10">
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">
-        Services
-      </p>
-      <h1 className="mt-2 max-w-3xl font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
-        Everything you need to look professional in print and online.
-      </h1>
-      <p className="mt-4 max-w-2xl text-muted">
-        Five service lines, one team. Open a service for the full picture, or jump
-        straight to the shop.
-      </p>
-      <ServicesList />
+    <main className="w-full">
+      {/* What We Do Hero Section: exact homepage ambient background, dynamic rotating aura, 01-05 numbered cards */}
+      <WhatWeDoHero />
+
+      {/* Comprehensive Service Deep-Dive: maintaining all existing service information, intros, deliverables & shop links */}
+      <ServicesDetailedList />
+
+      {/* Frequently Asked Questions: interactive accordion with answers across all services */}
+      <ServicesFaqSection />
+
+      {/* Consultation & Order Band */}
+      <div className="pt-10 pb-8">
+        <OrderBand />
+      </div>
     </main>
   );
 }
