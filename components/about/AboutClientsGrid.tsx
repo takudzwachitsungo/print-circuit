@@ -39,6 +39,36 @@ const CLIENTS: Client[] = [
     width: 983,
     height: 1024,
   },
+  {
+    name: "The Value Store",
+    src: "/clients/the-value-store.jpg",
+    width: 549,
+    height: 248,
+  },
+  {
+    name: "ZOC - Peculiar Seed On Campus",
+    src: "/clients/zoc-campus.png",
+    width: 1024,
+    height: 1020,
+  },
+  {
+    name: "Future First Financial Literacy",
+    src: "/clients/future-first.png",
+    width: 419,
+    height: 329,
+  },
+  {
+    name: "Maxitiles",
+    src: "/clients/maxitiles.jpg",
+    width: 1024,
+    height: 1024,
+  },
+  {
+    name: "Bacon Palace",
+    src: "/clients/bacon-palace.png",
+    width: 577,
+    height: 263,
+  },
 ];
 
 export default function AboutClientsGrid() {
@@ -60,12 +90,12 @@ export default function AboutClientsGrid() {
         </p>
       </Reveal>
 
-      {/* 5 Real Client Logo Cards */}
+      {/* 10 Real Client Logo Cards in 2 rows of 5 on desktop */}
       <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-6 lg:gap-8">
         {CLIENTS.map((client, index) => (
           <Reveal
             key={client.name}
-            delay={index * 0.05}
+            delay={index * 0.04}
             className="flex items-center justify-center"
           >
             <div
