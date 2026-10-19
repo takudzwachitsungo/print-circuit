@@ -63,30 +63,30 @@ export default function WhatWeDoHero() {
             return (
               <article
                 key={s.slug}
-                className="group relative flex h-[290px] sm:h-[305px] flex-col justify-between overflow-hidden rounded-2xl border border-line bg-surface p-4 sm:p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-magenta/50 hover:shadow-lg"
+                className="group relative flex h-[290px] sm:h-[305px] flex-col justify-between overflow-hidden rounded-2xl border border-black/15 bg-gradient-to-b from-[#1e0a1c] via-[#150413] to-[#0c020a] p-4 sm:p-5 text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:border-magenta/60 hover:shadow-[0_0_25px_rgba(236,0,140,0.3)]"
               >
-                {/* Subtle Card Accent Glow on Hover */}
+                {/* Ambient Card Backlight in Brand Magenta */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute -right-10 -top-10 h-24 w-24 rounded-full bg-magenta/5 blur-xl transition group-hover:bg-magenta/15"
+                  className="pointer-events-none absolute -right-10 -top-10 h-28 w-28 rounded-full bg-magenta/25 blur-2xl transition group-hover:bg-magenta/40"
                 />
 
                 {/* Top: Large Bold Number + Accent Bar */}
                 <div className="relative text-center">
-                  <span className="font-display text-4xl font-black tracking-tight text-primary sm:text-5xl">
+                  <span className="font-display text-4xl font-extrabold tracking-tight text-white drop-shadow-md sm:text-5xl">
                     {num}
                   </span>
-                  <div className="mx-auto mt-1.5 h-1 w-7 rounded-full bg-magenta transition-all duration-300 group-hover:w-12" />
+                  <div className="mx-auto mt-1.5 h-1 w-7 rounded-full bg-white/70 transition-all duration-300 group-hover:w-12 group-hover:bg-magenta" />
                 </div>
 
                 {/* Middle: Service Title & Tagline */}
                 <div className="relative z-10 text-center">
-                  <h2 className="font-display text-base font-bold leading-snug text-primary transition-colors group-hover:text-magenta sm:text-lg">
+                  <h2 className="font-display text-base font-bold leading-snug text-white transition-colors group-hover:text-pink-200 sm:text-lg">
                     <Link href={`/services/${s.slug}`} className="focus:outline-none">
                       {s.label}
                     </Link>
                   </h2>
-                  <p className="mt-1 text-xs leading-relaxed text-muted line-clamp-2">
+                  <p className="mt-1 text-xs leading-relaxed text-white/75 line-clamp-2">
                     {s.tagline}
                   </p>
                 </div>
@@ -104,7 +104,7 @@ export default function WhatWeDoHero() {
                     <defs>
                       <linearGradient id={`card-wave-grad-${index}`} x1="0" y1="0" x2="1" y2="1">
                         <stop offset="0%" stopColor="#ec008c" stopOpacity="0.95" />
-                        <stop offset="100%" stopColor="#b8006e" stopOpacity="0.95" />
+                        <stop offset="100%" stopColor="#9e005d" stopOpacity="0.95" />
                       </linearGradient>
                     </defs>
                     {/* Layered secondary translucent wave */}
@@ -118,7 +118,7 @@ export default function WhatWeDoHero() {
                 <div className="relative z-10 mt-auto flex justify-center pb-1">
                   <Link
                     href={`/services/${s.slug}`}
-                    className="inline-flex items-center justify-center rounded-full bg-white px-5 py-1.5 text-xs font-extrabold text-magenta shadow-md shadow-black/15 transition-all duration-300 hover:scale-105 hover:bg-magenta hover:text-white hover:shadow-magenta/30 active:scale-95"
+                    className="inline-flex items-center justify-center rounded-full bg-white px-5 py-1.5 text-xs font-extrabold text-magenta shadow-md shadow-black/25 transition-all duration-300 hover:scale-105 hover:bg-magenta hover:text-white hover:shadow-magenta/40 active:scale-95"
                   >
                     Get Started
                   </Link>
