@@ -40,19 +40,27 @@ export default function WhatWeDoHero() {
       className="relative w-full border-b border-line bg-white"
     >
       {/* ── Content Container (compact vertical padding for above-the-fold visibility) ── */}
-      <div className="relative mx-auto w-full max-w-screen-2xl px-4 pt-6 pb-10 sm:px-6 sm:pt-8 sm:pb-12 lg:px-8 lg:pt-8 lg:pb-12 xl:px-10">
+      <div className="relative mx-auto w-full max-w-screen-2xl px-4 pt-10 pb-12 sm:px-6 sm:pt-14 sm:pb-14 lg:px-8 xl:px-10">
         {/* Header: What We Do */}
-        <div className="text-center">
-          <h1 className="font-display text-3xl font-bold tracking-tight text-primary sm:text-4xl lg:text-5xl">
-            What We Do
+        <div>
+          {/* Top Eyebrow */}
+          <div className="flex items-center gap-3">
+            <span className="h-0.5 w-10 bg-magenta" />
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-magenta">
+              Capabilities &amp; Solutions
+            </p>
+          </div>
+          {/* Main Display Heading */}
+          <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+            What <span className="text-magenta">We Do.</span>
           </h1>
-          <p className="mx-auto mt-2 max-w-xl text-xs leading-relaxed text-muted sm:text-sm">
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
             Everything you need to look professional in print and online — five specialised service lines, one dedicated team in Harare.
           </p>
         </div>
 
         {/* ── 5-Card Numbered Showcase Grid ── */}
-        <div className="mt-6 grid grid-cols-1 gap-4 sm:mt-8 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
           {SERVICES.map((s, index) => {
             const num = String(index + 1).padStart(2, "0");
             const wave = WAVES[index] || WAVES[0];

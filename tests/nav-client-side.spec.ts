@@ -19,7 +19,7 @@ test("client-side navigation away from home renders the target page", async ({
 
   await expect(page).toHaveURL(/\/about$/, { timeout: 15000 });
   await expect(
-    page.getByRole("heading", { level: 1, name: /modern brands/i }),
+    page.getByRole("heading", { level: 1, name: /about/i }),
   ).toBeVisible();
   expect(errors.join("\n")).not.toContain("removeChild");
 });

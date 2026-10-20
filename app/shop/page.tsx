@@ -47,12 +47,27 @@ export default async function ShopPage({ searchParams }: { searchParams: SearchP
   ];
 
   return (
-    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-10 sm:px-6 lg:px-8 xl:px-10">
-      <p className="text-xs font-medium uppercase tracking-[0.2em] text-muted">Shop</p>
-      <h1 className="mt-2 font-display text-4xl font-medium tracking-tight text-primary sm:text-5xl">
-        {category ? CATEGORY_SHORT[category] : "Shop all"}
+    <main className="mx-auto w-full max-w-screen-2xl px-4 pb-20 pt-10 sm:px-6 sm:pt-14 lg:px-8 xl:px-10">
+      {/* Top Eyebrow */}
+      <div className="flex items-center gap-3">
+        <span className="h-0.5 w-10 bg-magenta" />
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-magenta">
+          Catalog &amp; Pricing
+        </p>
+      </div>
+      {/* Main Display Heading */}
+      <h1 className="mt-4 font-display text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl">
+        {category ? (
+          <>
+            Shop <span className="text-magenta">{CATEGORY_SHORT[category]}.</span>
+          </>
+        ) : (
+          <>
+            Shop <span className="text-magenta">all.</span>
+          </>
+        )}
       </h1>
-      <p className="mt-3 max-w-2xl text-muted">
+      <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
         Add what you need to your quote — we&rsquo;ll reply with prices, usually the same day.
       </p>
 
