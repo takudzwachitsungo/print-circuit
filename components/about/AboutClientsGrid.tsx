@@ -50,8 +50,9 @@ const CLIENTS: Client[] = [
   {
     name: "ZOC - Peculiar Seed On Campus",
     src: "/clients/zoc-campus.png",
-    width: 1024,
-    height: 1020,
+    width: 540,
+    height: 414,
+    scaleClass: "scale-[1.25] sm:scale-[1.35]",
   },
   {
     name: "Future First Financial Literacy",
