@@ -6,6 +6,7 @@ interface Client {
   src: string;
   width: number;
   height: number;
+  scaleClass?: string;
 }
 
 const CLIENTS: Client[] = [
@@ -18,8 +19,9 @@ const CLIENTS: Client[] = [
   {
     name: "Rotaract Club of University of Zimbabwe",
     src: "/clients/rotaract-uz.png",
-    width: 1024,
-    height: 1024,
+    width: 788,
+    height: 336,
+    scaleClass: "scale-[1.25] sm:scale-[1.35]",
   },
   {
     name: "Stream Exponential",
@@ -60,8 +62,9 @@ const CLIENTS: Client[] = [
   {
     name: "Maxitiles",
     src: "/clients/maxitiles.jpg",
-    width: 1024,
-    height: 1024,
+    width: 401,
+    height: 146,
+    scaleClass: "scale-[1.35] sm:scale-[1.5]",
   },
   {
     name: "Bacon Palace",
@@ -90,7 +93,7 @@ export default function AboutClientsGrid() {
         </p>
       </Reveal>
 
-      {/* 10 Real Client Logo Cards in 2 rows of 5 on desktop */}
+      {/* 10 Client Logo Cards in 2 rows of 5 on desktop */}
       <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5 sm:gap-6 lg:gap-8">
         {CLIENTS.map((client, index) => (
           <Reveal
@@ -108,7 +111,13 @@ export default function AboutClientsGrid() {
                 className="pointer-events-none absolute inset-2 rounded-2xl border border-black/[0.02] transition-colors group-hover:border-magenta/15"
               />
 
-              <div className="relative h-16 sm:h-20 w-full transition-transform duration-300 group-hover:scale-105">
+              <div
+                className={`relative h-16 sm:h-20 w-full transition-transform duration-300 ${
+                  client.scaleClass
+                    ? `${client.scaleClass} group-hover:brightness-105`
+                    : "group-hover:scale-105"
+                }`}
+              >
                 <Image
                   src={client.src}
                   alt={client.name}
