@@ -25,15 +25,15 @@ export default function AboutIntroStory() {
         {/* Narrative Copy matching reference screenshot 3 structure */}
         <Reveal delay={0.08} className="mt-8 space-y-6 text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
           <p>
-            <strong className="font-semibold text-primary">Printcircuit Enterprises (Private) Limited</strong> is a Zimbabwean printing and branding company committed to quality, innovation, integrity, and reliability. Since our incorporation on <span className="font-semibold text-primary">20 May 2026</span>, our primary objective has been to provide one-stop, world-class printing, branding, and digital solutions that help brands communicate clearly and stand out professionally.
+            <strong className="font-semibold text-primary">Print Circuit Enterprises (Private) Limited</strong> is a Zimbabwean printing and branding company committed to quality, creativity, and reliability. Since our incorporation on <span className="font-semibold text-primary">20 May 2026</span>, we have been helping businesses and individuals bring their ideas to life through professional printing, branding, and design solutions.
           </p>
 
           <p>
-            Some of the services offered at Print Circuit include a full range of commercial digital and large-format printing, graphic design and brand identity systems, corporate stationery supplies, indoor and outdoor signage, vehicle branding, and high-performance modern web development. Powered by modern equipment and rigorous quality control, we ensure every piece that leaves our Harare studio communicates with sharpness and credibility.
+            Our services include graphic design, digital and large-format printing, branding, indoor and outdoor signage, vehicle branding, web development, and stationery supplies. We are dedicated to delivering quality work that helps our clients communicate clearly and present their brands professionally.
           </p>
 
           <p>
-            We are powered by a qualified, creative, and passionate team with the necessary skills and experience to respond to today&rsquo;s technologically evolving print industry. Exceeding client expectations motivates the team at Print Circuit. We are committed to providing world-class print solutions and being excellent in all we do.
+            At Print Circuit, we believe every brand has a story worth telling. Our goal is to provide creative and reliable solutions that meet our clients&rsquo; needs and exceed their expectations.
           </p>
         </Reveal>
 
