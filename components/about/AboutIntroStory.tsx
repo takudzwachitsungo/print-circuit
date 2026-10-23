@@ -23,7 +23,7 @@ export default function AboutIntroStory() {
         </Reveal>
 
         {/* Narrative Copy matching reference screenshot 3 structure */}
-        <Reveal delay={0.08} className="mt-8 space-y-6 text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
+        <Reveal delay={0.08} className="mt-8 space-y-6 text-justify text-base leading-relaxed text-muted sm:text-lg sm:leading-8">
           <p>
             <strong className="font-semibold text-primary">Print Circuit Enterprises (Private) Limited</strong> is a Zimbabwean printing and branding company committed to quality, creativity, and reliability. Since our incorporation on <span className="font-semibold text-primary">20 May 2026</span>, we have been helping businesses and individuals bring their ideas to life through professional printing, branding, and design solutions.
           </p>

@@ -37,7 +37,7 @@ export default function AboutMissionVisionValues() {
             <h3 className="mt-1 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
               Mission
             </h3>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95 font-medium">
+            <p className="mt-4 text-justify text-sm sm:text-base leading-relaxed text-white/95 font-medium">
               To empower businesses and individuals with high-quality and innovative printing, branding, and marketing solutions that enhance their visibility and success.
             </p>
           </div>
@@ -52,7 +52,7 @@ export default function AboutMissionVisionValues() {
             <h3 className="mt-1 font-display text-2xl font-extrabold tracking-tight text-white sm:text-3xl">
               Vision
             </h3>
-            <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/95 font-medium">
+            <p className="mt-4 text-justify text-sm sm:text-base leading-relaxed text-white/95 font-medium">
               To become a leading provider of innovative printing, branding, and marketing solutions in Zimbabwe and beyond, renowned for excellence, creativity, and exceptional customer service.
             </p>
           </div>

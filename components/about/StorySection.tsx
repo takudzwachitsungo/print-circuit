@@ -7,7 +7,7 @@ export default function StorySection() {
         <h2 className="font-display text-3xl font-medium tracking-tight text-primary sm:text-4xl">
           Our story
         </h2>
-        <div className="mt-6 max-w-3xl space-y-4 text-lg text-muted">
+        <div className="mt-6 max-w-3xl space-y-4 text-justify text-lg text-muted">
           <p>
             Print Circuit Enterprises (Private) Limited is a Zimbabwean printing and branding company committed to quality, creativity, and reliability. Since our incorporation on 20 May 2026, we have been helping businesses and individuals bring their ideas to life through professional printing, branding, and design solutions.
           </p>
