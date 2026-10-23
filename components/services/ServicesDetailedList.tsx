@@ -51,7 +51,10 @@ export default function ServicesDetailedList() {
                       {service.tagline}
                     </p>
 
-                    <p className="mt-4 text-sm font-medium leading-relaxed text-magenta sm:text-base">
+                    <p
+                      style={{ color: "#ec008c" }}
+                      className="mt-4 text-sm font-semibold leading-relaxed text-[#ec008c] !text-[#ec008c] sm:text-base"
+                    >
                       {service.intro}
                     </p>
 
