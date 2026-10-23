@@ -51,7 +51,7 @@ export default function ServicesDetailedList() {
                       {service.tagline}
                     </p>
 
-                    <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
+                    <p className="mt-4 text-sm font-medium leading-relaxed text-magenta sm:text-base">
                       {service.intro}
                     </p>
 
