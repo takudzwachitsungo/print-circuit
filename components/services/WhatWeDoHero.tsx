@@ -97,7 +97,10 @@ export default function WhatWeDoHero() {
                       {s.label}
                     </Link>
                   </h2>
-                  <p className="mt-1 text-xs leading-relaxed text-white/75 line-clamp-2">
+                  <p
+                    style={{ color: "#ec008c" }}
+                    className="mt-1 text-xs font-semibold leading-relaxed text-[#ec008c] !text-[#ec008c] line-clamp-2"
+                  >
                     {s.tagline}
                   </p>
                 </div>
