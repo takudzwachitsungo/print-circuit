@@ -31,7 +31,7 @@ export default function ContactInfo() {
             </a>
           </p>
           <p>
-            Careers:{" "}
+            
             <a href={`mailto:${SITE.careersEmail}`} className="hover:text-primary">
               {SITE.careersEmail}
             </a>
